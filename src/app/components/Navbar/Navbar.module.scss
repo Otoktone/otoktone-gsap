@@ -1,0 +1,127 @@
+@use "../../styles/variables.scss" as *;
+
+.navbar {
+    max-width: 1600px;
+    padding-inline: 4vw;
+    margin: auto;
+
+    .navbarContainer {
+        box-shadow: 0px 5px 18px hsla(0, 0%, 80%, .1);
+        border: 1px solid $dark;
+        border-radius: 20px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        padding: 10px 20px;
+
+        .logo {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            justify-self: start;
+            margin-left: 20px;
+
+            img {
+                object-fit: contain;
+                width: fit-content;
+            }
+        }
+
+        .menuContainer {
+            display: flex;
+            align-items: center;
+            position: relative;
+            justify-self: end;
+
+            .burger {
+                z-index: 99;
+
+                .ham {
+                    cursor: pointer;
+                    transition: transform 400ms;
+                    -moz-user-select: none;
+                    -webkit-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    width: 40px;
+                }
+
+                .hamRotate.active {
+                    transform: rotate(45deg);
+                }
+
+                .line {
+                    fill: none;
+                    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms, stroke 0.3s ease-in-out;
+                    stroke: $white;
+                    stroke-width: 5.5;
+                    stroke-linecap: round;
+                }
+
+                .top {
+                    stroke-dasharray: 40 139;
+                }
+
+                .bottom {
+                    stroke-dasharray: 40 180;
+                }
+
+                &.active {
+                    .ham {
+                        transform: rotate(45deg);
+                    }
+
+                    .top {
+                        stroke-dashoffset: -98px;
+                    }
+
+                    .bottom {
+                        stroke-dashoffset: -138px;
+                    }
+
+                    .line {
+                        &:last-child {
+                            stroke: $electric;
+                        }
+                    }
+                }
+            }
+
+            .menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 15vw;
+                height: 100vh;
+                background: $black;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                opacity: 0;
+                display: flex;
+                flex-direction: column;
+                border-right: 2px solid $black;
+                box-shadow: 5px 0px 18px hsla(0, 0%, 80%, .1);
+
+                ul {
+                    li {
+                        display: flex;
+
+                        a {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                .menu {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .socials {}
+    }
+}
