@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Ubuntu } from "next/font/google";
 import Header from "./components/Header/Header";
 import "./styles/main.scss";
 
@@ -13,9 +13,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const ubuntu = Ubuntu({
+  variable: "--font-ubuntu",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Alexandre - Desmot | Développeur Web",
-  description: "Alexandre Desmot, conception et développement d'application web",
+  description:
+    "Alexandre Desmot, conception et développement d'application web",
 };
 
 export default function RootLayout({
@@ -24,12 +31,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="fr">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${ubuntu.variable}`}
+      >
         <Header />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   );

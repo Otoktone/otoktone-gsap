@@ -1,0 +1,32 @@
+@use "../../styles/variables.scss" as *;
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    .loaderImage {
+        opacity: 1;
+        animation: blink 2s infinite alternate;
+        width: 5vw !important;
+        height: auto !important;
+        margin: auto;
+    }
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.1;
+    }
+}
