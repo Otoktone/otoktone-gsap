@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import SplitType from "split-type";
@@ -59,14 +60,23 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarContainer}>
         <div className={styles.logo}>
-          <a href="/">
-            <Image src="/oda_white.svg" fill alt="Otoktone.fr logo site web" />
+          <Link href={"/"}>
+            {/* <Image
+              src="/oda_white.svg"
+              fill
+              priority={true}
+              alt="Otoktone.fr logo site web"
+            /> */}
             Otoktone
-          </a>
+          </Link>
         </div>
         <div
           className={`${styles.menuContainer} ${isOpen ? styles.active : ""}`}
@@ -110,6 +120,7 @@ const Navbar = () => {
                     <Link
                       href={href}
                       className={pathname === href ? styles.active : ""}
+                      onClick={closeMenu}
                     >
                       <span className="text1">{text}</span>
                       <span className="text2">{text}</span>

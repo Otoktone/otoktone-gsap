@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
+import Image from "next/image";
 import styles from "./Loader.module.scss";
 
 interface LoaderProps {
@@ -29,7 +29,9 @@ const Loader: React.FC<LoaderProps> = ({ setLoading }) => {
       <Image
         className={styles.loaderImage}
         src="/oda_white.svg"
-        fill
+        width={80}
+        height={80}
+        priority={true}
         alt="Otoktone.fr logo site web chargement"
       />
     </div>

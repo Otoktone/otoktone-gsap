@@ -20,9 +20,9 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
-  title: "Alexandre - Desmot | Développeur Web",
+  title: "Alexandre Desmot | Otoktone | Développeur Web",
   description:
-    "Alexandre Desmot, conception et développement d'application web",
+    "Otoktone, conception et développement d'application web. Design et création de site web.",
 };
 
 export default function RootLayout({

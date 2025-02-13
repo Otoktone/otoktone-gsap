@@ -1,0 +1,31 @@
+@use "./../../../styles/variables.scss" as *;
+
+#presentation {
+    display: grid;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    .presentationContainer {
+        display: grid;
+        width: 100%;
+        position: relative;
+        max-width: 1600px;
+        padding: 40px 20px;
+        margin: auto;
+
+        .textContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            p {
+                font-size: 4vw;
+                color: rgba($color: $white, $alpha: 0.8);
+                opacity: 0.2;
+                text-transform: uppercase;
+                transition: opacity 0.3s ease-out;
+            }
+        }
+    }
+}
