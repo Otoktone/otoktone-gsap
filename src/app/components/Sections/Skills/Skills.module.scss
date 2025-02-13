@@ -1,3 +1,105 @@
 @use "./../../../styles/variables.scss" as *;
 
-#skills {}
+#skills {
+    display: grid;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid $dark;
+
+    .skillsContainer {
+        display: grid;
+        width: 100%;
+        position: relative;
+        max-width: 1600px;
+        padding: 80px 20px;
+        margin: auto;
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+        column-gap: 20px;
+
+        .skillCard {
+            padding: 20px;
+            background: rgba($color: $dark, $alpha: 0.8);
+            height: 50vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h3 {
+                position: relative;
+                padding-left: 20px;
+                display: flex;
+                align-items: center;
+                color: rgba($color: $electric, $alpha: 0.7);
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 7.5px;
+                    height: 7.5px;
+                    background: rgba($color: $electric, $alpha: 0.7);
+                }
+            }
+
+            p {
+                color: rgba($color: $white, $alpha: 0.65);
+                font-size: 4vw;
+                font-family: $ubuntu;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #skills {
+        .skillsContainer {
+            grid-template-columns: repeat(2, 1fr);
+
+            .skillCard {
+                height: 35vw;
+
+                p {
+                    font-size: 2.5vw;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    #skills {
+        .skillsContainer {
+            grid-template-columns: repeat(4, 1fr);
+
+            .skillCard {
+                height: 25vw;
+
+                &:nth-child(n+1) {
+                    grid-area: 1 / 3 / 2 / 4;
+                }
+
+                &:nth-child(n+2) {
+                    grid-area: 1 / 4 / 2 / 5;
+                }
+
+                &:nth-child(n+3) {
+                    grid-area: 2 / 1 / 3 / 2;
+                }
+
+                &:nth-child(n+4) {
+                    grid-area: 2 / 2 / 3 / 3;
+                }
+
+                &:nth-child(n+5) {
+                    grid-area: 2 / 3 / 3 / 4;
+                }
+
+                p {
+                    font-size: 1.5vw;
+                }
+            }
+        }
+    }
+}
