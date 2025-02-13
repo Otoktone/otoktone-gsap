@@ -12,41 +12,35 @@ const Presentation = () => {
   const linesRef = useRef<(HTMLParagraphElement | null)[]>([]);
 
   useEffect(() => {
-    if (containerRef.current) {
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        scrub: true,
-        onUpdate: (self) => {
-          let progress = self.progress;
-          let centerIndex = Math.round(
-            progress * (linesRef.current.length - 1)
-          );
-          let opacityLevels = [0.8, 0.4, 0.2];
+    const updateOpacity = () => {
+      const viewportHeight = window.innerHeight;
 
-          linesRef.current.forEach((el, i) => {
-            if (el) {
-              let distance = Math.abs(centerIndex - i);
-              let opacity = opacityLevels[distance] || 0.2;
-              gsap.to(el, { opacity, duration: 0.3, ease: "power2.out" });
-            }
-          });
-        },
-        onEnter: () => {
-          // Reset quand on entre dans la section
-          linesRef.current.forEach((el) => {
-            if (el) gsap.to(el, { opacity: 0.2, duration: 0.3 });
-          });
-        },
-        onLeaveBack: () => {
-          // Reset quand on quitte la section vers le haut
-          linesRef.current.forEach((el) => {
-            if (el) gsap.to(el, { opacity: 0.2, duration: 0.3 });
-          });
-        },
+      linesRef.current.forEach((el, index) => {
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const lineTop = rect.top;
+          const lineBottom = rect.bottom;
+
+          const distanceFromCenter = Math.abs(
+            (lineTop + lineBottom) / 2 - viewportHeight / 2
+          );
+
+          const opacity = Math.max(
+            0.01,
+            0.8 - distanceFromCenter / (viewportHeight / 2)
+          );
+
+          gsap.to(el, { opacity, duration: 0.3, ease: "power2.out" });
+        }
       });
-    }
+    };
+
+    window.addEventListener("scroll", updateOpacity);
+    updateOpacity();
+
+    return () => {
+      window.removeEventListener("scroll", updateOpacity);
+    };
   }, []);
 
   return (
@@ -54,12 +48,22 @@ const Presentation = () => {
       <div ref={containerRef} className={styles.presentationContainer}>
         <div className={styles.textContainer}>
           {[
-            "Bienvenue sur Otoktone",
-            "Je suis Alexandre Desmot, développeur web en Bretagne.",
-            "Je conçois et développe des applications web modernes et performantes.",
-            "Otoktone.fr est mon espace personnel où je partage mon travail et mes projets.",
-            "De la création graphique à la gestion de serveurs, je touche à tout ce qui façonne le web.",
-            "Ce site est le reflet de ma passion pour la technologie et l'innovation.",
+            // "Bienvenue sur Otoktone",
+            // "Je suis Alexandre Desmot, développeur web en Bretagne.",
+            // "Je conçois et développe des applications web modernes, performantes et sécurisées.",
+            // "Otoktone.fr est mon espace personnel où je partage mes projets, mes compétences et mes valeurs.",
+            // "De la création graphique à la gestion de serveurs en passant par la création de site web, je touche à tout ce qui façonne le web.",
+            // "Ce site est le reflet de ma passion pour la technologie, l'innovation et de mon engouement pour le développement informatique.",
+            "Web",
+            "Design",
+            "Conception",
+            "Graphisme",
+            "Créativité",
+            "Développent",
+            "Programmation",
+            "Intégration",
+            "Serveur",
+            "Référencement",
           ].map((line, index) => (
             <p
               key={index}
