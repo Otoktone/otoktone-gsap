@@ -6,6 +6,8 @@ import { splitText } from "@/app/utils/textUtils";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {
+  const title = "Alexandre Desmot";
+  const subTitle = "Conception et développement d'application web";
   const backgroundRef = useRef<HTMLDivElement>(null);
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const h2Ref = useRef<HTMLDivElement>(null);
@@ -29,12 +31,14 @@ const Hero = () => {
       threshold: 0.2,
     });
 
-    if (h2Ref.current) {
-      observer.observe(h2Ref.current);
+    const h2Element = h2Ref.current;
+
+    if (h2Element) {
+      observer.observe(h2Element);
     }
 
     return () => {
-      if (h2Ref.current) {
+      if (h2Element) {
         observer.disconnect();
       }
     };
@@ -56,12 +60,10 @@ const Hero = () => {
       <div className={styles.heroHeaderContainer}>
         <div ref={backgroundRef} className={styles.heroHeaderBackground}></div>
         <div className={styles.heroHeaderTitle}>
-          <h1 ref={h1Ref}>Alexandre Desmot</h1>
-          <h2 className={styles.visuallyHidden}>
-            Conception et développement d'application web
-          </h2>
+          <h1 ref={h1Ref}>{title}</h1>
+          <h2 className={styles.visuallyHidden}>{subTitle}</h2>
           <h2 ref={h2Ref} aria-hidden="true">
-            {splitText("Conception et développement d'application web")}
+            {splitText(`${subTitle}`)}
           </h2>
         </div>
       </div>

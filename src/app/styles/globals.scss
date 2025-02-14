@@ -48,8 +48,11 @@ a {
     position: relative;
 
     &.blank {
+        display: flex;
+        align-items: center;
         padding-right: 20px;
         margin-right: 40px;
+        gap: 10px;
 
         &::before {
             position: absolute;

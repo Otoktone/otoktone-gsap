@@ -10,8 +10,8 @@
     .heroHeaderContainer {
         display: grid;
         width: 100%;
-        height: 100dvh;
-        min-height: 100dvh;
+        height: 100vh;
+        min-height: 100vh;
         position: relative;
 
         .heroHeaderBackground {
@@ -81,6 +81,7 @@
                 height: fit-content;
                 align-self: start;
                 transition: opacity 0.35s ease-in-out;
+                user-select: none;
 
                 &.visuallyHidden {
                     position: absolute;

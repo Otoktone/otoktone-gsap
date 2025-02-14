@@ -16,6 +16,14 @@ const Navbar = () => {
     animateLinks(linksRef);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  });
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -95,6 +103,8 @@ const Navbar = () => {
                   src="/github.svg"
                   width={20}
                   height={20}
+                  rel="preload"
+                  priority={true}
                   alt="Github logo"
                 />
               </a>

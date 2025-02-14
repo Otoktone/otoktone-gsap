@@ -21,6 +21,7 @@
                 font-weight: 200;
                 text-transform: uppercase;
                 color: transparent;
+                opacity: 0.8;
                 background-clip: text;
                 background-image: radial-gradient(49% 81% at 45% 47%, #00f0ff 0%, #073AFF00 100%), radial-gradient(113% 91% at 17% -2%, #6A0DAD 1%, #FF000000 99%), radial-gradient(142% 91% at 83% 7%, #FF6EC7 1%, #FF000000 99%), radial-gradient(142% 91% at -6% 74%, #1a1a1a 1%, #FF000000 99%), radial-gradient(142% 91% at 111% 84%, #1a1a1a 0%, #FF0000FF 100%);
             }
@@ -28,6 +29,7 @@
             h3 {
                 font-weight: 300;
                 opacity: 0;
+                user-select: none;
             }
         }
 
@@ -41,6 +43,10 @@
             a {
                 width: fit-content;
                 overflow: clip;
+
+                img {
+                    opacity: 0.75;
+                }
 
                 span {
                     &:nth-child(2) {
@@ -59,7 +65,7 @@
 
         span,
         a {
-            color: rgba($color: $white, $alpha: 0.5);
+            color: rgba($color: $white, $alpha: 0.35);
             font-size: 15px;
         }
     }

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { fadeIn, fadeInStaggered, animateLinks } from "@/app/utils/animation";
 import { splitText } from "@/app/utils/textUtils";
@@ -33,12 +34,14 @@ const Footer = () => {
       threshold: 0.2,
     });
 
-    if (h3Ref.current) {
-      observer.observe(h3Ref.current);
+    const h3Element = h3Ref.current;
+
+    if (h3Element) {
+      observer.observe(h3Element);
     }
 
     return () => {
-      if (h3Ref.current) {
+      if (h3Element) {
         observer.disconnect();
       }
     };
@@ -66,9 +69,21 @@ const Footer = () => {
         </div>
         <div className={styles.infos}>
           <a className="blank" href={`tel:${phone}`}>
+            <Image
+              src="/phone.svg"
+              width={20}
+              height={20}
+              alt="Phone number otoktone alexandre desmot"
+            />
             {phone}
           </a>
           <a className="blank" href={`mailto:${mail}`}>
+            <Image
+              src="/mail.svg"
+              width={20}
+              height={20}
+              alt="Mail contact otoktone alexandre desmot"
+            />
             {mail}
           </a>
         </div>
