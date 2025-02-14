@@ -18,12 +18,30 @@ const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Alexandre Desmot | Otoktone | Développeur Web",
   description:
     "Otoktone, conception et développement d'application web. Design et création de site web.",
+  metadataBase: new URL("https://www.otoktone.fr"),
+  openGraph: {
+    title: "Alexandre Desmot | Otoktone | Développeur Web",
+    description:
+      "Otoktone, conception et développement d'application web. Design et création de site web.",
+    url: "https://www.otoktone.fr",
+    type: "website",
+    images: "/images/preview.jpg",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alexandre Desmot | Otoktone | Développeur Web",
+    description:
+      "Otoktone, conception et développement d'application web. Design et création de site web.",
+    images: "/images/preview.jpg",
+  },
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
