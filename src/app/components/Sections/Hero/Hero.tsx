@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { fadeIn, fadeInStaggered } from "./../../../utils/animation";
-import { splitText } from "./../../../utils/textUtils";
+import { fadeIn, fadeInStaggered } from "@/app/utils/animation";
+import { splitText } from "@/app/utils/textUtils";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {
@@ -17,6 +17,7 @@ const Hero = () => {
         const letters = h2Ref.current?.querySelectorAll("span");
 
         if (letters) {
+          fadeIn(h1Ref.current, 0, 0.6, 3);
           fadeInStaggered(letters, 0, 0.5, 0.5, 0.05);
         }
       }
@@ -45,8 +46,8 @@ const Hero = () => {
     const letters = h2Ref.current.querySelectorAll("span");
 
     fadeIn(backgroundRef.current, 0, 0.2, 3);
-    fadeIn(h1Ref.current, 0, 0.6, 20);
-    fadeIn(h2Ref.current, 0, 0.6, 10);
+    fadeIn(h1Ref.current, 0, 0.6, 3);
+    fadeIn(h2Ref.current, 0, 0.6, 1.5);
     fadeInStaggered(letters, 0, 0.5, 0.5, 0.05);
   }, []);
 

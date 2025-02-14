@@ -39,11 +39,37 @@ pre {
 
 main {
     display: grid;
+    min-height: 100dvh;
 }
 
 a {
     text-decoration: none;
     color: rgba($color: $white, $alpha: 0.8);
+    position: relative;
+
+    &.blank {
+        padding-right: 20px;
+        margin-right: 40px;
+
+        &::before {
+            position: absolute;
+            right: 0;
+            bottom: 8px;
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-top: 1px solid rgba($color: $purple, $alpha: 0.8);
+            border-right: 1px solid rgba($color: $purple, $alpha: 0.8);
+            transition: all 0.35s ease-in-out;
+        }
+
+        &:hover {
+            &::before {
+                border-top: 1px solid rgba($color: $pink, $alpha: 0.8);
+                border-right: 1px solid rgba($color: $pink, $alpha: 0.8);
+            }
+        }
+    }
 }
 
 h1,

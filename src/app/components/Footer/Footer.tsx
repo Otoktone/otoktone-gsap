@@ -1,7 +1,101 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+import { fadeIn, fadeInStaggered, animateLinks } from "@/app/utils/animation";
+import { splitText } from "@/app/utils/textUtils";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
-  return <footer></footer>;
+  const phone = "+33635443347";
+  const mail = "alexandre.desmot@otoktone.fr";
+  const year: number = new Date().getFullYear();
+
+  const h3Ref = useRef<HTMLHeadingElement>(null);
+  const linksRef = useRef<HTMLAnchorElement[]>([]);
+
+  // Reload letters animation when entering viewport
+  const handleAnimationInViewport = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const letters = h3Ref.current?.querySelectorAll("span");
+
+        if (letters) {
+          fadeIn(h3Ref.current, 0, 0.6, 3);
+          fadeInStaggered(letters, 0, 0.5, 0.5, 0.05);
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleAnimationInViewport, {
+      threshold: 0.2,
+    });
+
+    if (h3Ref.current) {
+      observer.observe(h3Ref.current);
+    }
+
+    return () => {
+      if (h3Ref.current) {
+        observer.disconnect();
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!h3Ref.current) return;
+
+    const letters = h3Ref.current.querySelectorAll("span");
+    fadeIn(h3Ref.current, 0, 0.6, 1.5);
+    fadeInStaggered(letters, 0, 0.5, 0.5, 0.05);
+  }, []);
+
+  useEffect(() => {
+    if (linksRef.current.length === 0) return;
+    requestAnimationFrame(() => animateLinks(linksRef));
+  }, []);
+
+  return (
+    <footer id={styles.footer}>
+      <div className={styles.footerContainer}>
+        <div className={styles.footerHeader}>
+          <h2>Otoktone</h2>
+          <h3 ref={h3Ref}>{splitText("Alexandre Desmot | Développeur web")}</h3>
+        </div>
+        <div className={styles.infos}>
+          <a className="blank" href={`tel:${phone}`}>
+            {phone}
+          </a>
+          <a className="blank" href={`mailto:${mail}`}>
+            {mail}
+          </a>
+        </div>
+        <div className={styles.legals}>
+          {["Profil", "Contact", "Mentions légales"].map((text, i) => (
+            <Link
+              key={text}
+              href={`/${
+                text === "Mentions légales" ? "mentions" : text.toLowerCase()
+              }`}
+              ref={(el) => {
+                if (el) linksRef.current[i] = el;
+              }}
+            >
+              <span className="text1">{text}</span>
+              <span className="text2">{text}</span>
+            </Link>
+          ))}
+        </div>
+      </div>
+      <div className={styles.copyright}>
+        <span>
+          <Link href={"/"}>Otoktone</Link> | Alexandre Desmot | © {year}
+        </span>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
