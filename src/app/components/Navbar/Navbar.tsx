@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import SplitType from "split-type";
 import { usePathname } from "next/navigation";
+import { animateLinks } from "@/app/utils/animation";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navbar.module.scss";
@@ -12,48 +11,9 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const linksRef = useRef<HTMLLIElement[]>([]);
-  const timelinesRef = useRef<Map<HTMLLIElement, gsap.core.Timeline>>(
-    new Map()
-  );
 
   useEffect(() => {
-    linksRef.current.forEach((link) => {
-      if (!link) return;
-
-      // Clean old animations
-      if (timelinesRef.current.has(link)) {
-        timelinesRef.current.get(link)?.kill();
-      }
-
-      const text1 = new SplitType(link.querySelector(".text1") as HTMLElement);
-      const text2 = new SplitType(link.querySelector(".text2") as HTMLElement);
-
-      const tl = gsap
-        .timeline({ paused: true })
-        .to(text1.chars, {
-          yPercent: -120,
-          stagger: 0.015,
-          duration: 0.35,
-          ease: "power3.out",
-        })
-        .to(text2.chars, { yPercent: -100 }, 0);
-
-      timelinesRef.current.set(link, tl);
-
-      const playAnimation = () => tl.play();
-      const reverseAnimation = () => tl.reverse();
-
-      link.addEventListener("mouseenter", playAnimation);
-      link.addEventListener("mouseleave", reverseAnimation);
-
-      // Cleanup
-      return () => {
-        link.removeEventListener("mouseenter", playAnimation);
-        link.removeEventListener("mouseleave", reverseAnimation);
-        text1.revert();
-        text2.revert();
-      };
-    });
+    animateLinks(linksRef);
   }, []);
 
   const toggleMenu = () => {

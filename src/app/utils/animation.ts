@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+import SplitType from "split-type";
 
 /**
  * Animates an element with a fade-in effect.
@@ -43,4 +44,55 @@ export const fadeInStaggered = (
     { opacity: fromOpacity },
     { opacity: toOpacity, duration, stagger, ease: "power3.out" }
   );
+};
+
+/**
+ * Animates navigation links with a hover effect.
+ *
+ * - On hover, the first text (.text1) moves up with a staggered effect.
+ * - Simultaneously, the second text (.text2) moves up without stagger.
+ * - On mouse leave, the animation reverses.
+ *
+ * @param linksRef A reference to an array of HTML elements (either <li> or <a>) to animate.
+ */
+export const animateLinks = (linksRef: React.RefObject<(HTMLLIElement | HTMLAnchorElement)[]>) => {
+  const timelinesRef = new Map<HTMLLIElement | HTMLAnchorElement, gsap.core.Timeline>();
+
+  linksRef.current?.forEach((link) => {
+    if (!link) return;
+
+    // Delete old animations
+    if (timelinesRef.has(link)) {
+      timelinesRef.get(link)?.kill();
+    }
+
+    const text1 = new SplitType(link.querySelector(".text1") as HTMLElement);
+    const text2 = new SplitType(link.querySelector(".text2") as HTMLElement);
+
+    const tl = gsap
+      .timeline({ paused: true })
+      .to(text1.chars, {
+        yPercent: -120,
+        stagger: 0.015,
+        duration: 0.35,
+        ease: "power3.out",
+      })
+      .to(text2.chars, { yPercent: -100 }, 0);
+
+    timelinesRef.set(link, tl);
+
+    const playAnimation = () => tl.play();
+    const reverseAnimation = () => tl.reverse();
+
+    link.addEventListener("mouseenter", playAnimation);
+    link.addEventListener("mouseleave", reverseAnimation);
+
+    // Cleanup
+    return () => {
+      link.removeEventListener("mouseenter", playAnimation);
+      link.removeEventListener("mouseleave", reverseAnimation);
+      text1.revert();
+      text2.revert();
+    };
+  });
 };
