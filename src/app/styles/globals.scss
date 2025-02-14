@@ -5,12 +5,26 @@
     margin: 0;
     padding: 0;
     outline: none;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent; // Pour les navigateurs basés sur WebKit
+    -webkit-touch-callout: none; // Désactive le menu contextuel lors du clic prolongé
 }
 
 ::selection {
     color: $dark;
     background: rgba($color: $white, $alpha: 0.8);
+}
+
+::-webkit-scrollbar-track {
+    background-color: $black;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: rgba($white, 0.1) -30px -30px 60px -12px inset, rgba($electric, 0.15) -60px -30px 60px -18px inset;
 }
 
 body {
