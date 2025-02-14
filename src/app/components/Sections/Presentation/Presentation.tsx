@@ -15,7 +15,7 @@ const Presentation = () => {
     const updateOpacity = () => {
       const viewportHeight = window.innerHeight;
 
-      linesRef.current.forEach((el, index) => {
+      linesRef.current.forEach((el) => {
         if (el) {
           const rect = el.getBoundingClientRect();
           const lineTop = rect.top;

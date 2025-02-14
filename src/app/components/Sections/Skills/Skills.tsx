@@ -5,12 +5,12 @@ const Skills = () => {
     {
       name: "Design",
       description:
-        "Conception de maquettes et création d'identités visuelles cohérentes et uniques, adaptées aux besoins de chaque projet.",
+        "Conception de maquettes et création d'identités visuelles uniques.",
     },
     {
       name: "Développement",
       description:
-        "Création de sites web dynamiques et d'applications web sur mesure, en utilisant les technologies actuelles pour offrir des solutions performantes, scalables et sécurisées.",
+        "Création de sites web et d'applications web sur mesure, en utilisant les technologies actuelles.",
     },
     {
       name: "Hébergement",
@@ -20,12 +20,12 @@ const Skills = () => {
     {
       name: "SEO",
       description:
-        "Optimisation complète pour les moteurs de recherche (SEO), l'amélioration des performances, la recherche de mots-clés et l'optimisation du contenu pour augmenter la visibilité et le référencement.",
+        "Optimisation complète pour les moteurs de recherche, amélioration des performances et optimisation du contenu pour augmenter la visibilité et le référencement.",
     },
     {
       name: "Maintenance",
       description:
-        "Assistance continue avec des mises à jour régulières, des sauvegardes sécurisées et un support technique pour garantir la sécurité, les performances et la pérennité des sites web à long terme.",
+        "Assistance et mises à jour régulières, sauvegardes sécurisées et support technique pour garantir la sécurité, les performances et la pérennité.",
     },
   ];
 
