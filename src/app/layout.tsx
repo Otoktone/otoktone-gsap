@@ -1,17 +1,20 @@
+import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Ubuntu } from "next/font/google";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+const Header = dynamic(() => import("@/app/components/Header/Header"));
+const Footer = dynamic(() => import("@/app/components/Footer/Footer"));
 import "./styles/main.scss";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const ubuntu = Ubuntu({
@@ -22,26 +25,59 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
-  title: "Alexandre Desmot | Otoktone | Développeur Web",
+  title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne",
   description:
-    "Otoktone, conception et développement d'application web. Design et création de site web.",
+    "Alexandre Desmot | Otoktone, conception et développement d'application web. Design, création de site web et hébergement serveur en Bretagne.",
   metadataBase: new URL("https://www.otoktone.fr"),
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: { url: "/favicon.ico", type: "image/x-icon" },
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
-    title: "Alexandre Desmot | Otoktone | Développeur Web",
+    title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne",
     description:
-      "Otoktone, conception et développement d'application web. Design et création de site web.",
+      "Alexandre Desmot | Otoktone, conception et développement d'application web. Design, création de site web et hébergement serveur en Bretagne.",
     url: "https://www.otoktone.fr",
     type: "website",
-    images: "/images/preview.jpg",
+    images: [
+      {
+        url: "/images/preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Aperçu du site Otoktone | Alexandre Desmot | Développeur web",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alexandre Desmot | Otoktone | Développeur Web",
+    title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne",
     description:
-      "Otoktone, conception et développement d'application web. Design et création de site web.",
-    images: "/images/preview.jpg",
+      "Alexandre Desmot | Otoktone, conception et développement d'application web. Design, création de site web et hébergement serveur en Bretagne.",
+    images: [
+      {
+        url: "/images/preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Aperçu du site Otoktone | Alexandre Desmot | Développeur web",
+      },
+    ],
   },
-  viewport: "width=device-width, initial-scale=1",
+  keywords: [
+    "Otoktone",
+    "Alexandre Desmot",
+    "création site internet",
+    "développeur web",
+    "Vannes",
+    "Bretagne",
+  ],
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

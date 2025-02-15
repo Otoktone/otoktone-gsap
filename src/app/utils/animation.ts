@@ -11,15 +11,15 @@ import SplitType from "split-type";
 export const fadeIn = (
   element: HTMLElement | null,
   fromOpacity: number = 0,
-  toOpacity: number = 1,
+  toOpacity: number = 0.8,
   duration: number = 1,
   ease: string = "power3.out"
 ) => {
   if (!element) return;
   gsap.fromTo(
     element,
-    { opacity: fromOpacity },
-    { opacity: toOpacity, duration, ease: ease }
+    { visibility: "hidden", opacity: fromOpacity },
+    { visibility: "visible",opacity: toOpacity, duration, ease: ease }
   );
 };
 

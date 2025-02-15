@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
 import { fadeIn } from "@/app/utils/animation";
-import Navbar from "../Navbar/Navbar";
+const Navbar = dynamic(() => import("@/app/components/Navbar/Navbar"), {
+  ssr: false,
+});
 import styles from "./Header.module.scss";
 
 const Header = () => {

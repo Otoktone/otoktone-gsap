@@ -8,23 +8,36 @@ import { splitText } from "@/app/utils/textUtils";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
-  const phone = "+33635443347";
-  const mail = "alexandre.desmot@otoktone.fr";
+  const phone: string = "+33635443347";
+  const mail: string = "alexandre.desmot@otoktone.fr";
+  const facebook: string = "https://www.facebook.com/alexotoktone/";
+  const instagram: string = "https://www.instagram.com/otoktone.fr/";
+  const twitter: string = "https://x.com/otoktonefr";
   const year: number = new Date().getFullYear();
 
   const h3Ref = useRef<HTMLHeadingElement>(null);
   const linksRef = useRef<HTMLAnchorElement[]>([]);
+  const isAnimating = useRef<boolean>(false);
 
-  // Reload letters animation when entering viewport
+  const playAnimation = () => {
+    if (isAnimating.current) return; // Prevent animation if already playing
+    isAnimating.current = true;
+
+    const letters = h3Ref.current?.querySelectorAll("span") || null;
+    fadeIn(h3Ref.current, 0, 0.6, 3);
+    fadeInStaggered(letters, 0, 0.5, 0.5, 0.05);
+
+    // Unlock animation
+    setTimeout(() => {
+      isAnimating.current = false;
+    }, 3000);
+  };
+
+  // Viewport observer
   const handleAnimationInViewport = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const letters = h3Ref.current?.querySelectorAll("span");
-
-        if (letters) {
-          fadeIn(h3Ref.current, 0, 0.6, 3);
-          fadeInStaggered(letters, 0, 0.5, 0.5, 0.05);
-        }
+        playAnimation();
       }
     });
   };
@@ -47,12 +60,9 @@ const Footer = () => {
     };
   }, []);
 
+  // Launch animation at first page loading
   useEffect(() => {
-    if (!h3Ref.current) return;
-
-    const letters = h3Ref.current.querySelectorAll("span");
-    fadeIn(h3Ref.current, 0, 0.6, 1.5);
-    fadeInStaggered(letters, 0, 0.5, 0.5, 0.05);
+    playAnimation();
   }, []);
 
   useEffect(() => {
@@ -64,28 +74,30 @@ const Footer = () => {
     <footer id={styles.footer}>
       <div className={styles.footerContainer}>
         <div className={styles.footerHeader}>
-          <h2>Otoktone</h2>
+          <Link href={"/"}>
+            <h2>Otoktone</h2>
+          </Link>
           <h3 ref={h3Ref}>{splitText("Alexandre Desmot | Développeur web")}</h3>
-        </div>
-        <div className={styles.infos}>
-          <a className="blank" href={`tel:${phone}`}>
-            <Image
-              src="/phone.svg"
-              width={20}
-              height={20}
-              alt="Phone number otoktone alexandre desmot"
-            />
-            {phone}
-          </a>
-          <a className="blank" href={`mailto:${mail}`}>
-            <Image
-              src="/mail.svg"
-              width={20}
-              height={20}
-              alt="Mail contact otoktone alexandre desmot"
-            />
-            {mail}
-          </a>
+          <div className={styles.infos}>
+            <a href={`mailto:${mail}`}>
+              <Image
+                src="/mail.svg"
+                width={20}
+                height={20}
+                alt="Mail contact otoktone alexandre desmot création site web"
+                loading="lazy"
+              />
+            </a>
+            <a href={`tel:${phone}`}>
+              <Image
+                src="/phone.svg"
+                width={20}
+                height={20}
+                alt="Phone number otoktone alexandre desmot création de site"
+                loading="lazy"
+              />
+            </a>
+          </div>
         </div>
         <div className={styles.legals}>
           {["Profil", "Contact", "Mentions légales"].map((text, i) => (
@@ -102,6 +114,39 @@ const Footer = () => {
               <span className="text2">{text}</span>
             </Link>
           ))}
+        </div>
+
+        <div className={styles.socials}>
+          <a className="blank" href={facebook} target="_blank">
+            <Image
+              src="/facebook.svg"
+              width={20}
+              height={20}
+              alt="Page Facebook professionel otoktone alexandre desmot"
+              loading="lazy"
+            />
+            Facebook
+          </a>
+          <a className="blank" href={instagram} target="_blank">
+            <Image
+              src="/instagram.svg"
+              width={20}
+              height={20}
+              alt="Instagram otoktone alexandre desmot personnel"
+              loading="lazy"
+            />
+            Instagram
+          </a>
+          <a className="blank" href={twitter} target="_blank">
+            <Image
+              src="/twitter-x.svg"
+              width={20}
+              height={20}
+              alt="Twitter X otoktone alexandre desmot création de site web"
+              loading="lazy"
+            />
+            X - Twitter
+          </a>
         </div>
       </div>
       <div className={styles.copyright}>

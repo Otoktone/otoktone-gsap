@@ -40,8 +40,8 @@ const Navbar = () => {
             {/* <Image
               src="/oda_white.svg"
               fill
-              priority={true}
               alt="Otoktone.fr logo site web"
+              loading="lazy"
             /> */}
             Otoktone
           </Link>
@@ -104,8 +104,8 @@ const Navbar = () => {
                   width={20}
                   height={20}
                   rel="preload"
-                  priority={true}
-                  alt="Github logo"
+                  alt="Github logo Otoktone Alexandre Desmot développeur web"
+                  loading="lazy"
                 />
               </a>
               <a href="https://github.com/Otoktone/" target="_blank">
@@ -113,7 +113,8 @@ const Navbar = () => {
                   src="/linkedin.svg"
                   width={20}
                   height={20}
-                  alt="LinkedIn logo"
+                  alt="LinkedIn logo Alexandre Desmot Otoktone développeur web"
+                  loading="lazy"
                 />
               </a>
             </div>

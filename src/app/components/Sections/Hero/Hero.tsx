@@ -8,20 +8,34 @@ import styles from "./Hero.module.scss";
 const Hero = () => {
   const title = "Alexandre Desmot";
   const subTitle = "Conception et développement d'application web";
+
   const backgroundRef = useRef<HTMLDivElement>(null);
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const h2Ref = useRef<HTMLDivElement>(null);
+  const isAnimating = useRef<boolean>(false);
 
-  // Reload letters animation when entering viewport
+  const playAnimation = () => {
+    if (isAnimating.current) return; // Prevent animation if already playing
+    isAnimating.current = true; // Animation's lock
+
+    const letters = h2Ref.current?.querySelectorAll("span") || null;
+
+    fadeIn(backgroundRef.current, 0, 0.2, 3);
+    fadeIn(h1Ref.current, 0, 0.6, 5);
+    fadeIn(h2Ref.current, 0, 0.6, 1.5);
+    fadeInStaggered(letters, 0, 0.5, 0.5, 0.05);
+
+    // Unlock animation
+    setTimeout(() => {
+      isAnimating.current = false;
+    }, 3000);
+  };
+
+  // Viewport observer
   const handleAnimationInViewport = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        const letters = h2Ref.current?.querySelectorAll("span");
-
-        if (letters) {
-          fadeIn(h1Ref.current, 0, 0.6, 3);
-          fadeInStaggered(letters, 0, 0.5, 0.5, 0.05);
-        }
+        playAnimation();
       }
     });
   };
@@ -44,15 +58,9 @@ const Hero = () => {
     };
   }, []);
 
+  // Launch animation at first page loading
   useEffect(() => {
-    if (!h2Ref.current) return;
-
-    const letters = h2Ref.current.querySelectorAll("span");
-
-    fadeIn(backgroundRef.current, 0, 0.2, 3);
-    fadeIn(h1Ref.current, 0, 0.6, 3);
-    fadeIn(h2Ref.current, 0, 0.6, 1.5);
-    fadeInStaggered(letters, 0, 0.5, 0.5, 0.05);
+    playAnimation();
   }, []);
 
   return (
@@ -61,9 +69,11 @@ const Hero = () => {
         <div ref={backgroundRef} className={styles.heroHeaderBackground}></div>
         <div className={styles.heroHeaderTitle}>
           <h1 ref={h1Ref}>{title}</h1>
-          <h2 className={styles.visuallyHidden}>{subTitle}</h2>
-          <h2 ref={h2Ref} aria-hidden="true">
-            {splitText(`${subTitle}`)}
+          <h2 className={styles.visuallyHidden}>
+            {subTitle} | Création de site web
+          </h2>
+          <h2 ref={h2Ref} className="hidden" aria-hidden="true">
+            {splitText(subTitle)}
           </h2>
         </div>
       </div>

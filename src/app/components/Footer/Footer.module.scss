@@ -13,7 +13,7 @@
         max-width: 1400px;
         padding: 40px 20px;
         margin: auto;
-        gap: 20px;
+        gap: 40px;
 
         .footerHeader {
             h2 {
@@ -31,14 +31,35 @@
                 opacity: 0;
                 user-select: none;
             }
+
+            .infos {
+                padding-top: 20px;
+                display: flex;
+                gap: 10px;
+
+                a {
+                    display: flex;
+                    width: fit-content;
+                    height: 100%;
+                    padding: 20px;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid $dark;
+                    border-radius: 10px;
+                    transition: box-shadow 0.35s ease-in-out;
+
+                    &:hover {
+                        box-shadow: rgba($white, 0.1) -30px -30px 60px -12px inset, rgba($electric, 0.15) -60px -30px 60px -18px inset;
+                    }
+                }
+            }
         }
 
-        .infos,
+        .socials,
         .legals {
             display: flex;
             flex-direction: column;
-            padding-top: 20px;
-            gap: 10px;
+            gap: 20px;
 
             a {
                 width: fit-content;
@@ -74,15 +95,22 @@
 @media (min-width: 992px) {
     #footer {
         .footerContainer {
+            padding: 40px;
             grid-template-columns: repeat(3, 1fr);
 
-            .infos,
+            .socials,
             .legals {
                 padding-top: 0;
+                margin: 0 auto;
             }
 
             .legals {
-                align-self: end;
+                align-self: start;
+            }
+
+            .socials {
+                width: 100%;
+                align-items: end;
             }
         }
     }

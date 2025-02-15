@@ -31,8 +31,8 @@ const Loader: React.FC<LoaderProps> = ({ setLoading }) => {
         src="/oda_white.svg"
         width={80}
         height={80}
-        priority={true}
         alt="Otoktone.fr logo site web chargement"
+        loading="lazy"
       />
     </div>
   );

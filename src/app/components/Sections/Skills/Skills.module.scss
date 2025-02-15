@@ -21,11 +21,12 @@
         .skillCard {
             position: relative;
             padding: 20px;
-            background: rgba($color: $dark, $alpha: 0.4);
+            background: rgba($color: $dark, $alpha: 0.6);
             height: 50vw;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: all 0.7s ease-in-out;
 
             h3 {
                 position: relative;
@@ -33,6 +34,7 @@
                 display: flex;
                 align-items: center;
                 color: rgba($color: $electric, $alpha: 0.25);
+                transition: color 0.35s ease-in-out;
 
                 &:before {
                     content: '';
@@ -41,6 +43,19 @@
                     width: 7.5px;
                     height: 7.5px;
                     background: rgba($color: $electric, $alpha: 0.25);
+                    transition: all 0.35s ease-in-out;
+                }
+
+                &::after {
+                    position: absolute;
+                    right: 0;
+                    bottom: 8px;
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-top: 1px solid rgba($color: $white, $alpha: 0.35);
+                    border-right: 1px solid rgba($color: $white, $alpha: 0.35);
+                    transition: all .35s ease-in-out;
                 }
             }
 
@@ -48,6 +63,28 @@
                 color: rgba($color: $white, $alpha: 0.5);
                 font-size: 4vw;
                 font-family: $font-geist-sans;
+                transition: color .35s ease-in-out;
+            }
+
+            &:hover {
+                background: rgba($color: $dark, $alpha: 0.8);
+
+                h3 {
+                    color: rgba($color: $electric, $alpha: 0.75);
+
+                    &::before {
+                        background: rgba($color: $electric, $alpha: 0.75);
+                    }
+
+                    &::after {
+                        border-top: 1px solid rgba($color: $white, $alpha: 0.5);
+                        border-right: 1px solid rgba($color: $white, $alpha: 0.5);
+                    }
+                }
+
+                p {
+                    color: rgba($color: $white, $alpha: 0.75);
+                }
             }
         }
     }
@@ -61,6 +98,7 @@
             .skillCard {
                 padding: 1.5vw 2vw;
                 height: 35vw;
+                background: rgba($color: $dark, $alpha: 0.4);
 
                 p {
                     font-size: 2.5vw;

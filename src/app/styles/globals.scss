@@ -83,3 +83,8 @@ h5,
 h6 {
     color: $white;
 }
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
