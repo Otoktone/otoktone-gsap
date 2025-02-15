@@ -48,6 +48,10 @@
                     border-radius: 10px;
                     transition: box-shadow 0.35s ease-in-out;
 
+                    img {
+                        opacity: 0.75;
+                    }
+
                     &:hover {
                         box-shadow: rgba($white, 0.1) -30px -30px 60px -12px inset, rgba($electric, 0.15) -60px -30px 60px -18px inset;
                     }

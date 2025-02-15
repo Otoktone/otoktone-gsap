@@ -1,9 +1,12 @@
 import dynamic from "next/dynamic";
 import type { Metadata } from "next";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { Geist, Geist_Mono, Ubuntu } from "next/font/google";
 const Header = dynamic(() => import("@/app/components/Header/Header"));
 const Footer = dynamic(() => import("@/app/components/Footer/Footer"));
 import "./styles/main.scss";
+
+const GTM: string = "GTM-KMBJZDN5";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -87,6 +90,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <GoogleTagManager gtmId={GTM} />
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${ubuntu.variable}`}
       >
