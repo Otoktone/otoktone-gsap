@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { fadeIn, fadeInStaggered, animateLinks } from "@/app/utils/animation";
 import { splitText } from "@/app/utils/textUtils";
 import styles from "./Footer.module.scss";
@@ -34,13 +34,16 @@ const Footer = () => {
   };
 
   // Viewport observer
-  const handleAnimationInViewport = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        playAnimation();
-      }
-    });
-  };
+  const handleAnimationInViewport = useCallback(
+    (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          playAnimation();
+        }
+      });
+    },
+    []
+  );
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleAnimationInViewport, {

@@ -1,8 +1,14 @@
 import Image from "next/image";
 import styles from "./Tech.module.scss";
 
+type Technology = {
+  name: string;
+  image: string;
+  url: string;
+};
+
 const Tech = () => {
-  const technologies = [
+  const technologies: Technology[] = [
     {
       name: "Alpine Linux",
       image: "/tech/logo_alpine_linux.svg",
@@ -96,7 +102,7 @@ const Tech = () => {
     },
   ];
 
-  const shuffleArray = (array: any[]) => {
+  const shuffleArray = (array: Technology[]) => {
     return array.sort(() => Math.random() - 0.5);
   };
 

@@ -18,8 +18,8 @@ export const fadeIn = (
   if (!element) return;
   gsap.fromTo(
     element,
-    { visibility: "hidden", opacity: fromOpacity },
-    { visibility: "visible",opacity: toOpacity, duration, ease: ease }
+    { opacity: fromOpacity },
+    { opacity: toOpacity, duration, ease: ease }
   );
 };
 
@@ -36,13 +36,14 @@ export const fadeInStaggered = (
   fromOpacity: number = 0,
   toOpacity: number = 1,
   duration: number = 0.5,
-  stagger: number = 0.05
+  stagger: number = 0.05,
+  ease: string = "power3.out"
 ) => {
   if (!elements) return;
   gsap.fromTo(
     elements,
     { opacity: fromOpacity },
-    { opacity: toOpacity, duration, stagger, ease: "power3.out" }
+    { opacity: toOpacity, duration, stagger, ease: ease }
   );
 };
 
