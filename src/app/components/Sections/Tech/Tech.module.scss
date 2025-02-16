@@ -1,14 +1,96 @@
 @use "./../../../styles/variables.scss" as *;
 
 #tech {
-    display: grid;
+    display: flex;
     position: relative;
     width: 100%;
     overflow: hidden;
 
+    .techLayout {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background-image: linear-gradient(180deg, $black 0%, #FFFFFF00 15%), linear-gradient(270deg, $black 0%, #FFFFFF00 30%), linear-gradient(0deg, $black 0%, #FFFFFF00 15%), linear-gradient(90deg, $black 0%, #FFFFFF00 30%);
+        pointer-events: none;
+    }
+
     .techContainer {
-        display: grid;
+        display: flex;
         width: 100%;
         position: relative;
+        justify-content: center;
+        gap: 20px;
+        height: 1535px;
+        overflow: hidden;
+        max-width: 1600px;
+        margin: auto;
+
+        .leftColumn,
+        .rightColumn {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            width: 50%;
+            gap: 20px;
+
+            .techCard {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px;
+                justify-content: center;
+                align-items: center;
+                background: rgba($color: $dark, $alpha: 0.75);
+                min-height: 200px;
+
+                img {
+                    object-fit: contain;
+                }
+            }
+
+            &:hover {
+                animation-play-state: paused;
+            }
+        }
+
+        .leftColumn {
+            animation: scrollLeftColumn 60s linear infinite;
+
+            &:nth-child(1) {
+                top: -100%;
+            }
+        }
+
+        .rightColumn {
+            animation: scrollRightColumn 60s linear infinite;
+
+            &:nth-child(1) {
+                top: -100%;
+            }
+        }
+    }
+}
+
+@keyframes scrollLeftColumn {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-200%);
+    }
+}
+
+@keyframes scrollRightColumn {
+    0% {
+        transform: translateY(-200%);
+    }
+
+    100% {
+        transform: translateY(0%);
     }
 }
