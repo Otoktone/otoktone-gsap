@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.otoktone.fr
+
+# Sitemaps
+Sitemap: https://www.otoktone.fr/sitemap.xml

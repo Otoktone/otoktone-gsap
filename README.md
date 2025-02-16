@@ -44,3 +44,23 @@ npm install --save-dev webpack-bundle-analyzer
 
 npm run analyze
 ```
+
+## Generate sitemap
+
+TODO
+
+```bash
+npm install next-sitemap
+```
+
+```js
+// next-sitemap.config.js
+module.exports = {
+  siteUrl: "https://www.example.com",
+  generateRobotsTxt: true, // Generate robots.txt file
+};
+```
+
+```bash
+npx next-sitemap
+```
