@@ -58,7 +58,7 @@ const Footer = () => {
         observer.disconnect();
       }
     };
-  }, []);
+  }, [handleAnimationInViewport]);
 
   // Launch animation at first page loading
   useEffect(() => {
@@ -81,18 +81,20 @@ const Footer = () => {
           <div className={styles.infos}>
             <a href={`mailto:${mail}`}>
               <Image
-                src="/mail.svg"
+                src="/icons/mail.svg"
                 width={20}
                 height={20}
+                priority={false}
                 alt="Mail contact otoktone alexandre desmot création site web"
                 loading="lazy"
               />
             </a>
             <a href={`tel:${phone}`}>
               <Image
-                src="/phone.svg"
+                src="/icons/phone.svg"
                 width={20}
                 height={20}
+                priority={false}
                 alt="Phone number otoktone alexandre desmot création de site"
                 loading="lazy"
               />
@@ -117,9 +119,14 @@ const Footer = () => {
         </div>
 
         <div className={styles.socials}>
-          <a className="blank" href={facebook} target="_blank">
+          <a
+            className="blank"
+            href={facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
-              src="/facebook.svg"
+              src="/icons/facebook.svg"
               width={20}
               height={20}
               alt="Page Facebook professionel otoktone alexandre desmot"
@@ -127,9 +134,14 @@ const Footer = () => {
             />
             Facebook
           </a>
-          <a className="blank" href={instagram} target="_blank">
+          <a
+            className="blank"
+            href={instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
-              src="/instagram.svg"
+              src="/icons/instagram.svg"
               width={20}
               height={20}
               alt="Instagram otoktone alexandre desmot personnel"
@@ -137,7 +149,12 @@ const Footer = () => {
             />
             Instagram
           </a>
-          <a className="blank" href={twitter} target="_blank">
+          <a
+            className="blank"
+            href={twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/twitter-x.svg"
               width={20}

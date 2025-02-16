@@ -5,13 +5,12 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid $dark;
+    border-top: 1px solid $dark;
 
     .skillsContainer {
         display: grid;
         width: 100%;
         position: relative;
-        max-width: 95vw;
         padding: 80px 20px;
         margin: auto;
         grid-template-columns: 1fr;
@@ -93,6 +92,7 @@
 @media (min-width: 768px) {
     #skills {
         .skillsContainer {
+            max-width: 95vw;
             grid-template-columns: repeat(2, 1fr);
 
             .skillCard {

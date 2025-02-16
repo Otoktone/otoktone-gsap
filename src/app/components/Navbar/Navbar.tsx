@@ -98,19 +98,26 @@ const Navbar = () => {
               })}
             </ul>
             <div className={styles.socials}>
-              <a href="https://github.com/Otoktone/" target="_blank">
+              <a
+                href="https://github.com/Otoktone/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
-                  src="/github.svg"
+                  src="/icons/github.svg"
                   width={20}
                   height={20}
-                  rel="preload"
                   alt="Github logo Otoktone Alexandre Desmot développeur web"
                   loading="lazy"
                 />
               </a>
-              <a href="https://github.com/Otoktone/" target="_blank">
+              <a
+                href="https://github.com/Otoktone/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
-                  src="/linkedin.svg"
+                  src="/icons/linkedin.svg"
                   width={20}
                   height={20}
                   alt="LinkedIn logo Alexandre Desmot Otoktone développeur web"

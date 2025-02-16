@@ -2,86 +2,132 @@ import Image from "next/image";
 import styles from "./Tech.module.scss";
 
 const Tech = () => {
-  const technologies: { name: string; image: string }[] = [
-    { name: "Alpine Linux", image: "/tech/logo_alpine_linux.svg" },
-    { name: "CSS3", image: "/tech/logo_css3.svg" },
-    { name: "Debian Linux", image: "/tech/logo_debian_linux.svg" },
-    { name: "Docker", image: "/tech/logo_docker_blue.svg" },
-    { name: "HTML5", image: "/tech/logo_html5.svg" },
-    { name: "JavaScript", image: "/tech/logo_javascript.png" },
-    { name: "Kubernetes", image: "/tech/logo_kubernetes.png" },
-    { name: "MySQL", image: "/tech/logo_mysql.png" },
-    { name: "PHP", image: "/tech/logo_php.svg" },
-    { name: "Plesk", image: "/tech/logo_plesk.png" },
-    { name: "Proxmox", image: "/tech/logo_proxmox.svg" },
-    { name: "React", image: "/tech/logo_react.svg" },
-    { name: "TypeScript", image: "/tech/logo_typescript.svg" },
-    { name: "WordPress", image: "/tech/logo_wordpress.png" },
+  const technologies = [
+    {
+      name: "Alpine Linux",
+      image: "/tech/logo_alpine_linux.svg",
+      url: "https://alpinelinux.org",
+    },
+    {
+      name: "CSS3",
+      image: "/tech/logo_css3.svg",
+      url: "https://www.w3.org/TR/css/",
+    },
+    {
+      name: "Debian Linux",
+      image: "/tech/logo_debian_linux.svg",
+      url: "https://www.debian.org",
+    },
+    {
+      name: "Docker",
+      image: "/tech/logo_docker_blue.svg",
+      url: "https://www.docker.com",
+    },
+    {
+      name: "HTML5",
+      image: "/tech/logo_html5.svg",
+      url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    },
+    {
+      name: "JavaScript",
+      image: "/tech/logo_javascript.png",
+      url: "https://www.javascript.com",
+    },
+    {
+      name: "Kubernetes",
+      image: "/tech/logo_kubernetes.png",
+      url: "https://kubernetes.io",
+    },
+    {
+      name: "MySQL",
+      image: "/tech/logo_mysql.png",
+      url: "https://www.mysql.com",
+    },
+    { name: "PHP", image: "/tech/logo_php.svg", url: "https://www.php.net" },
+    {
+      name: "Plesk",
+      image: "/tech/logo_plesk.png",
+      url: "https://www.plesk.com",
+    },
+    {
+      name: "Proxmox",
+      image: "/tech/logo_proxmox.svg",
+      url: "https://www.proxmox.com",
+    },
+    {
+      name: "React",
+      image: "/tech/logo_react.svg",
+      url: "https://reactjs.org",
+    },
+    {
+      name: "TypeScript",
+      image: "/tech/logo_typescript.svg",
+      url: "https://www.typescriptlang.org",
+    },
+    {
+      name: "WordPress",
+      image: "/tech/logo_wordpress.png",
+      url: "https://wordpress.org",
+    },
+    {
+      name: "Gsap",
+      image: "/tech/logo_gsap.svg",
+      url: "https://gsap.com/",
+    },
+    {
+      name: "phpMyAdmin",
+      image: "/tech/logo_phpmyadmin.svg",
+      url: "https://www.phpmyadmin.net",
+    },
+    {
+      name: "Symfony",
+      image: "/tech/logo_symfony.svg",
+      url: "https://symfony.com",
+    },
+    {
+      name: "Sass",
+      image: "/tech/logo_sass.svg",
+      url: "https://sass-lang.com",
+    },
+    {
+      name: "Scaleway",
+      image: "/tech/logo_scaleway.png",
+      url: "https://www.scaleway.com/",
+    },
   ];
+
+  const shuffleArray = (array: any[]) => {
+    return array.sort(() => Math.random() - 0.5);
+  };
 
   return (
     <section id={styles.tech}>
-      <div className={styles.techLayout}></div>
       <div className={styles.techContainer}>
-        <div className={styles.leftColumn}>
-          {technologies.concat(technologies).map((tech, index) => (
-            <div key={index} className={styles.techCard}>
-              <Image
-                src={tech.image}
-                alt={tech.name}
-                width={200}
-                height={100}
-                loading="lazy"
-              />
-              <h5>{tech.name}</h5>
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.rightColumn}>
-          {technologies.concat(technologies).map((tech, index) => (
-            <div key={index} className={styles.techCard}>
-              <Image
-                src={tech.image}
-                alt={tech.name}
-                width={200}
-                height={100}
-                loading="lazy"
-              />
-              <h5>{tech.name}</h5>
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.leftColumn}>
-          {technologies.concat(technologies).map((tech, index) => (
-            <div key={index} className={styles.techCard}>
-              <Image
-                src={tech.image}
-                alt={tech.name}
-                width={200}
-                height={100}
-                loading="lazy"
-              />
-              <h5>{tech.name}</h5>
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.rightColumn}>
-          {technologies.concat(technologies).map((tech, index) => (
-            <div key={index} className={styles.techCard}>
-              <Image
-                src={tech.image}
-                alt={tech.name}
-                width={200}
-                height={100}
-                loading="lazy"
-              />
-              <h5>{tech.name}</h5>
-            </div>
-          ))}
-        </div>
+        <div className={styles.techLayout}></div>
+        {[...Array(4)].map((_, i) => (
+          <div
+            key={i}
+            className={i % 2 === 0 ? styles.leftColumn : styles.rightColumn}
+          >
+            {technologies
+              .concat(shuffleArray(technologies))
+              .map((tech, index) => (
+                <div key={index} className={styles.techCard}>
+                  <a href={tech.url} target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src={tech.image}
+                      alt={tech.name}
+                      // width={200}
+                      // height={100}
+                      fill
+                      loading="lazy"
+                    />
+                    <h5>{tech.name}</h5>
+                  </a>
+                </div>
+              ))}
+          </div>
+        ))}
       </div>
     </section>
   );

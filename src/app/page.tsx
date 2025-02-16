@@ -1,11 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import dynamic from "next/dynamic";
 
-const Loader = dynamic(() => import("@/app/components/Loader/Loader"), {
-  ssr: false,
-});
 const Hero = dynamic(() => import("@/app/components/Sections/Hero/Hero"), {
   ssr: false,
 });
@@ -26,20 +22,12 @@ const Tech = dynamic(() => import("@/app/components/Sections/Tech/Tech"), {
 });
 
 const Home = () => {
-  const [loading, setLoading] = useState<boolean>(false);
-
   return (
     <>
-      {loading ? (
-        <Loader setLoading={setLoading} />
-      ) : (
-        <>
-          <Hero />
-          <Presentation />
-          <Skills />
-          <Tech />
-        </>
-      )}
+      <Hero />
+      <Presentation />
+      <Skills />
+      <Tech />
     </>
   );
 };
