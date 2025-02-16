@@ -27,7 +27,6 @@
             animation: spin 60s infinite linear;
             height: 125vh;
             opacity: 0;
-            transition: opacity 0.5s ease-out;
         }
 
         @keyframes spin {
@@ -62,6 +61,17 @@
 
             h1 {
                 display: flex;
+                align-items: start;
+                font-size: 3.5vw;
+                font-weight: 300;
+                height: fit-content;
+                user-select: none;
+                opacity: 0;
+                order: 2;
+            }
+
+            h2 {
+                display: flex;
                 align-items: end;
                 font-size: 12vw;
                 text-transform: uppercase;
@@ -69,37 +79,8 @@
                 opacity: 0;
                 height: fit-content;
                 align-self: end;
-                transition: opacity 0.35s ease-in-out;
-            }
-
-            h2 {
-                display: flex;
-                align-items: start;
-                font-size: 3.5vw;
-                font-weight: 300;
-                height: fit-content;
-                align-self: start;
-                transition: opacity 0.35s ease-in-out;
-                user-select: none;
-
-                &.visuallyHidden {
-                    position: absolute;
-                    width: 1px;
-                    height: 1px;
-                    padding: 0;
-                    margin: -1px;
-                    overflow: hidden;
-                    clip: rect(0, 0, 0, 0);
-                    border: 0;
-                    white-space: nowrap;
-                }
-            }
-
-            .letter {
-                display: inline-block;
-                user-select: none;
                 opacity: 0;
-                transition: opacity 0.5s ease-out;
+                order: 1;
             }
         }
     }
@@ -112,11 +93,11 @@
                 padding-inline: 80px;
 
                 h1 {
-                    font-size: 8vw;
+                    font-size: 2.5vw;
                 }
 
                 h2 {
-                    font-size: 2.5vw;
+                    font-size: 8vw;
                 }
             }
         }
@@ -135,11 +116,11 @@
             .heroHeaderTitle {
 
                 h1 {
-                    font-size: 6vw;
+                    font-size: 2vw;
                 }
 
                 h2 {
-                    font-size: 2vw;
+                    font-size: 6vw;
                 }
             }
         }

@@ -13,7 +13,7 @@ export const fadeIn = (
   fromOpacity: number = 0,
   toOpacity: number = 0.8,
   duration: number = 1,
-  ease: string = "power3.out"
+  ease: string = "power1.out"
 ) => {
   if (!element) return;
   gsap.fromTo(
@@ -75,7 +75,7 @@ export const animateLinks = (linksRef: React.RefObject<(HTMLLIElement | HTMLAnch
         yPercent: -120,
         stagger: 0.015,
         duration: 0.35,
-        ease: "power3.out",
+        ease: "power2.out",
       })
       .to(text2.chars, { yPercent: -100 }, 0);
 
