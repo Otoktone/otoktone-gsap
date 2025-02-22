@@ -1,4 +1,4 @@
 module.exports = {
-    siteUrl: 'https://www.otoktone.fr',
+    siteUrl: 'https://otoktone.fr',
     generateRobotsTxt: true,
 };

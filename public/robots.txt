@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.otoktone.fr
+Host: https://otoktone.fr
 
 # Sitemaps
-Sitemap: https://www.otoktone.fr/sitemap.xml
+Sitemap: https://otoktone.fr/sitemap.xml

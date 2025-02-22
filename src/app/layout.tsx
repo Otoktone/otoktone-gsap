@@ -30,8 +30,8 @@ const ubuntu = Ubuntu({
 export const metadata: Metadata = {
   title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne",
   description:
-    "Alexandre Desmot | Otoktone, conception et développement d'application web. Design, création de site web et hébergement serveur en Bretagne.",
-  metadataBase: new URL("https://www.otoktone.fr"),
+    "Alexandre Desmot | Otoktone | Développeur Web Bretagne, conception, développement et intégration d'application web. Design, création de site web et hébergement serveur en France.",
+  metadataBase: new URL("https://otoktone.fr"),
   alternates: {
     canonical: "/",
   },
@@ -43,11 +43,11 @@ export const metadata: Metadata = {
     title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne",
     description:
       "Alexandre Desmot | Otoktone, conception et développement d'application web. Design, création de site web et hébergement serveur en Bretagne.",
-    url: "https://www.otoktone.fr",
+    url: "https://otoktone.fr",
     type: "website",
     images: [
       {
-        url: "/images/preview.jpg",
+        url: "/preview.jpg",
         width: 1200,
         height: 630,
         alt: "Aperçu du site Otoktone | Alexandre Desmot | Développeur web",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
       "Alexandre Desmot | Otoktone, conception et développement d'application web. Design, création de site web et hébergement serveur en Bretagne.",
     images: [
       {
-        url: "/images/preview.jpg",
+        url: "/preview.jpg",
         width: 1200,
         height: 630,
         alt: "Aperçu du site Otoktone | Alexandre Desmot | Développeur web",

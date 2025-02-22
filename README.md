@@ -56,7 +56,7 @@ npm install next-sitemap
 ```js
 // next-sitemap.config.js
 module.exports = {
-  siteUrl: "https://www.example.com",
+  siteUrl: "https://example.com",
   generateRobotsTxt: true, // Generate robots.txt file
 };
 ```
