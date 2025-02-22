@@ -26,6 +26,7 @@
             animation: spin 60s infinite linear;
             height: 125vh;
             opacity: 0;
+            will-change: opacity;
         }
 
         @keyframes spin {
@@ -67,6 +68,7 @@
                 user-select: none;
                 opacity: 0;
                 order: 2;
+                will-change: opacity;
             }
 
             h2 {
@@ -80,6 +82,7 @@
                 align-self: end;
                 opacity: 0;
                 order: 1;
+                will-change: opacity;
             }
         }
     }

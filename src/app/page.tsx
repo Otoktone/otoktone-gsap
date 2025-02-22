@@ -21,6 +21,10 @@ const Tech = dynamic(() => import("@/app/components/Sections/Tech/Tech"), {
   ssr: false,
 });
 
+const Stack = dynamic(() => import("@/app/components/Sections/Stack/Stack"), {
+  ssr: false,
+});
+
 const Home = () => {
   return (
     <>
@@ -28,6 +32,7 @@ const Home = () => {
       <Presentation />
       <Skills />
       <Tech />
+      <Stack />
     </>
   );
 };

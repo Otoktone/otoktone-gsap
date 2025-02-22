@@ -10,7 +10,7 @@ const Skills = () => {
     {
       name: "Développement",
       description:
-        "Création de sites web et d'applications web sur mesure, en utilisant les technologies actuelles.",
+        "Création de sites web et d'applications web sur mesure, en utilisant les technologies et normes actuelles.",
     },
     {
       name: "Hébergement",

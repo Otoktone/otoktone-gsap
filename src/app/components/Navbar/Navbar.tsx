@@ -36,15 +36,7 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.navbarContainer}>
         <div className={styles.logo}>
-          <Link href={"/"}>
-            {/* <Image
-              src="/oda_white.svg"
-              fill
-              alt="Otoktone.fr logo site web"
-              loading="lazy"
-            /> */}
-            Otoktone
-          </Link>
+          <Link href={"/"}>Otoktone</Link>
         </div>
         <div
           className={`${styles.menuContainer} ${isOpen ? styles.active : ""}`}
@@ -98,11 +90,7 @@ const Navbar = () => {
               })}
             </ul>
             <div className={styles.socials}>
-              <a
-                href="https://github.com/Otoktone/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://github.com/Otoktone/" target="_blank">
                 <Image
                   src="/icons/github.svg"
                   width={20}
@@ -111,11 +99,7 @@ const Navbar = () => {
                   loading="lazy"
                 />
               </a>
-              <a
-                href="https://github.com/Otoktone/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://github.com/Otoktone/" target="_blank">
                 <Image
                   src="/icons/linkedin.svg"
                   width={20}

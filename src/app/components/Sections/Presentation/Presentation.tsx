@@ -48,18 +48,12 @@ const Presentation = () => {
       <div ref={containerRef} className={styles.presentationContainer}>
         <div className={styles.textContainer}>
           {[
-            // "Bienvenue sur Otoktone",
-            // "Je suis Alexandre Desmot, développeur web en Bretagne.",
-            // "Je conçois et développe des applications web modernes, performantes et sécurisées.",
-            // "Otoktone.fr est mon espace personnel où je partage mes projets, mes compétences et mes valeurs.",
-            // "De la création graphique à la gestion de serveurs en passant par la création de site web, je touche à tout ce qui façonne le web.",
-            // "Ce site est le reflet de ma passion pour la technologie, l'innovation et de mon engouement pour le développement informatique.",
             "Web",
             "Design",
             "Conception",
             "Graphisme",
-            "Créativité",
-            "Développent",
+            "Création",
+            "Développement",
             "Programmation",
             "Intégration",
             "Serveur",

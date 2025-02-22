@@ -54,9 +54,10 @@
                     img {
                         object-fit: contain;
                         opacity: 0.9;
-                        position: initial !important;
                         max-height: 100px;
                         max-width: 200px;
+                        width: 100%;
+                        height: 100%;
                     }
 
                     h5 {
@@ -107,13 +108,13 @@
     }
 
     100% {
-        transform: translateY(-633%);
+        transform: translateY(-700%);
     }
 }
 
 @keyframes scrollRightColumn {
     0% {
-        transform: translateY(-633%);
+        transform: translateY(-700%);
     }
 
     100% {

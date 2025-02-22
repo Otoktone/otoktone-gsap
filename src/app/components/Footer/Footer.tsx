@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useCallback } from "react";
-import { fadeIn, fadeInStaggered, animateLinks } from "@/app/utils/animation";
+import { fadeInStaggered, animateLinks } from "@/app/utils/animation";
 import { splitText } from "@/app/utils/textUtils";
 import styles from "./Footer.module.scss";
 
@@ -24,8 +24,7 @@ const Footer = () => {
     isAnimating.current = true;
 
     const letters = h3Ref.current?.querySelectorAll("span") || null;
-    fadeIn(h3Ref.current, 0, 0.6, 3);
-    fadeInStaggered(letters, 0, 0.5, 0.5, 0.05);
+    fadeInStaggered(letters, 0, 0.6, 0.5, 0.05);
 
     // Unlock animation
     setTimeout(() => {
@@ -122,12 +121,7 @@ const Footer = () => {
         </div>
 
         <div className={styles.socials}>
-          <a
-            className="blank"
-            href={facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a className="blank" href={facebook} target="_blank">
             <Image
               src="/icons/facebook.svg"
               width={20}
@@ -137,12 +131,7 @@ const Footer = () => {
             />
             Facebook
           </a>
-          <a
-            className="blank"
-            href={instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a className="blank" href={instagram} target="_blank">
             <Image
               src="/icons/instagram.svg"
               width={20}
@@ -152,14 +141,9 @@ const Footer = () => {
             />
             Instagram
           </a>
-          <a
-            className="blank"
-            href={twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a className="blank" href={twitter} target="_blank">
             <Image
-              src="/twitter-x.svg"
+              src="/icons/twitter-x.svg"
               width={20}
               height={20}
               alt="Twitter X otoktone alexandre desmot création de site web"

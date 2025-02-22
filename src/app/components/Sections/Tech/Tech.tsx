@@ -100,6 +100,16 @@ const Tech = () => {
       image: "/tech/logo_scaleway.png",
       url: "https://www.scaleway.com/",
     },
+    {
+      name: "Nginx",
+      image: "/tech/logo_nginx.svg",
+      url: "https://nginx.org/",
+    },
+    {
+      name: "Apache",
+      image: "/tech/logo_apache.svg",
+      url: "https://httpd.apache.org/",
+    },
   ];
 
   const shuffleArray = (array: Technology[]) => {
@@ -119,13 +129,12 @@ const Tech = () => {
               .concat(shuffleArray(technologies))
               .map((tech, index) => (
                 <div key={index} className={styles.techCard}>
-                  <a href={tech.url} target="_blank" rel="noopener noreferrer">
+                  <a href={tech.url} target="_blank">
                     <Image
                       src={tech.image}
                       alt={tech.name}
-                      // width={200}
-                      // height={100}
-                      fill
+                      width={0}
+                      height={0}
                       loading="lazy"
                     />
                     <h5>{tech.name}</h5>

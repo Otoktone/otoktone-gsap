@@ -14,8 +14,8 @@ const Hero = () => {
 
   useEffect(() => {
     fadeIn(backgroundRef.current, 0, 0.2, 3);
-    fadeIn(h1Ref.current, 0, 0.65, 5);
-    fadeIn(h2Ref.current, 0, 0.5, 5);
+    fadeIn(h1Ref.current, 0, 0.65, 3);
+    fadeIn(h2Ref.current, 0, 0.7, 3);
   }, []);
 
   return (
