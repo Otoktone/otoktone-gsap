@@ -55,10 +55,10 @@ const Stack = () => {
           </div>
           <div className={styles.stackImage}>
             <Image
-              src={"/stack/vortex.jpg"}
+              src={"/stack/vortex.webp"}
               alt={"Vortex - Aggrégation de flux - Site web Symfony"}
-              width={0}
-              height={0}
+              width={650}
+              height={315}
               loading="lazy"
             />
           </div>
@@ -84,12 +84,12 @@ const Stack = () => {
           </div>
           <div className={styles.stackImage}>
             <Image
-              src={"/stack/fred.jpg"}
+              src={"/stack/fred.webp"}
               alt={
                 "FRED GAFFORI - Photographe & Réalisateur Vidéo - Nice & Vannes"
               }
-              width={0}
-              height={0}
+              width={650}
+              height={315}
               loading="lazy"
             />
           </div>

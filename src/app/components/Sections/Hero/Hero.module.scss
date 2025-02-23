@@ -19,14 +19,15 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('/background_abstract_white.svg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position-x: center;
-            animation: spin 60s infinite linear;
             height: 125vh;
             opacity: 0;
-            will-change: opacity;
+            animation: spin 60s infinite linear;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         @keyframes spin {
@@ -80,7 +81,6 @@
                 opacity: 0;
                 height: fit-content;
                 align-self: end;
-                opacity: 0;
                 order: 1;
                 will-change: opacity;
             }
@@ -98,8 +98,9 @@
                     font-size: 2.5vw;
                 }
 
+                h1,
                 h2 {
-                    font-size: 8vw;
+                    justify-content: center;
                 }
             }
         }
@@ -119,10 +120,6 @@
 
                 h1 {
                     font-size: 2vw;
-                }
-
-                h2 {
-                    font-size: 6vw;
                 }
             }
         }

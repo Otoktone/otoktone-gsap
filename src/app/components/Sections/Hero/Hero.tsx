@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { fadeIn } from "@/app/utils/animation";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {
-  const subTitle = "Alexandre Desmot";
+  const subTitle = "Otoktone";
   const title = "Conception et développement d'application web";
 
   const backgroundRef = useRef<HTMLDivElement>(null);
@@ -21,7 +22,15 @@ const Hero = () => {
   return (
     <section id={styles.hero}>
       <div className={styles.heroHeaderContainer}>
-        <div ref={backgroundRef} className={styles.heroHeaderBackground}></div>
+        <div ref={backgroundRef} className={styles.heroHeaderBackground}>
+          <Image
+            src={"/background_abstract_white.svg"}
+            alt="Otoktone background hero"
+            width={0}
+            height={0}
+            priority
+          />
+        </div>
         <div className={styles.heroHeaderTitle}>
           <h1 ref={h1Ref}>{title}</h1>
           <h2 ref={h2Ref}>{subTitle}</h2>
