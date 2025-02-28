@@ -47,8 +47,6 @@ npm run analyze
 
 ## Generate sitemap
 
-TODO
-
 ```bash
 npm install next-sitemap
 ```

@@ -95,7 +95,7 @@ const Navbar = () => {
                   src="/icons/github.svg"
                   width={20}
                   height={20}
-                  alt="Github logo Otoktone Alexandre Desmot développeur web"
+                  alt="Github logo Otoktone Alexandre Desmot développeur web vannes"
                   loading="lazy"
                 />
               </a>
@@ -104,7 +104,7 @@ const Navbar = () => {
                   src="/icons/linkedin.svg"
                   width={20}
                   height={20}
-                  alt="LinkedIn logo Alexandre Desmot Otoktone développeur web"
+                  alt="LinkedIn logo Alexandre Desmot Otoktone développeur web vannes"
                   loading="lazy"
                 />
               </a>

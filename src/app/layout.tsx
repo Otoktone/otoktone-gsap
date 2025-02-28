@@ -28,9 +28,9 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
-  title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne",
+  title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes",
   description:
-    "Alexandre Desmot | Otoktone | Développeur Web Bretagne, conception, développement et intégration d'application web. Design, création de site web et hébergement serveur en France.",
+    "Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes, conception, développement et intégration d'application web. Design, création de site web et hébergement serveur en France.",
   metadataBase: new URL("https://otoktone.fr"),
   alternates: {
     canonical: "/",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne",
+    title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes",
     description:
       "Alexandre Desmot | Otoktone, conception et développement d'application web. Design, création de site web et hébergement serveur en Bretagne.",
     url: "https://otoktone.fr",
@@ -50,13 +50,13 @@ export const metadata: Metadata = {
         url: "/preview.jpg",
         width: 1200,
         height: 630,
-        alt: "Aperçu du site Otoktone | Alexandre Desmot | Développeur web",
+        alt: "Aperçu du site Otoktone | Alexandre Desmot | Développeur Web Bretagne Vannes",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne",
+    title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes",
     description:
       "Alexandre Desmot | Otoktone, conception et développement d'application web. Design, création de site web et hébergement serveur en Bretagne.",
     images: [
@@ -64,14 +64,16 @@ export const metadata: Metadata = {
         url: "/preview.jpg",
         width: 1200,
         height: 630,
-        alt: "Aperçu du site Otoktone | Alexandre Desmot | Développeur web",
+        alt: "Aperçu du site Otoktone | Alexandre Desmot | Développeur web Vannes",
       },
     ],
   },
   keywords: [
     "Otoktone",
     "Alexandre Desmot",
+    "création site",
     "création site internet",
+    "site internet",
     "développeur web",
     "Vannes",
     "Bretagne",

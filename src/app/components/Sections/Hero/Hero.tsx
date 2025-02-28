@@ -26,8 +26,7 @@ const Hero = () => {
           <Image
             src={"/background_abstract_white.svg"}
             alt="Otoktone background hero"
-            width={0}
-            height={0}
+            fill
             priority
           />
         </div>
