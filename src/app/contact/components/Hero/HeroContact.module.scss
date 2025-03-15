@@ -1,12 +1,12 @@
-@use './../../styles/variables.scss' as *;
+@use './../../../styles/variables.scss' as *;
 
-#heroProfile {
+#heroContact {
     display: grid;
     position: relative;
     width: 100%;
     overflow: hidden;
 
-    .heroProfileContainer {
+    .heroContactContainer {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -14,20 +14,9 @@
         height: 100vh;
         min-height: 50vh;
         position: relative;
+        max-width: 1660px;
         padding-inline: 40px;
         margin: auto;
-
-        .heroBackground {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0;
-            background-image: url("/abstract_background_profile.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
 
         h1 {
             font-size: 12vw;
@@ -39,7 +28,7 @@
         }
 
         h2 {
-            font-size: 3.5vw;
+            font-size: 6.5vw;
             font-weight: 300;
             height: fit-content;
             opacity: 0;
@@ -48,11 +37,10 @@
 }
 
 @media (min-width: 768px) {
-    #heroProfile {
-        .heroProfileContainer {
+    #heroContact {
+        .heroContactContainer {
             h1 {
                 text-align: center;
-                font-size: 8vw;
             }
 
             h2 {
@@ -63,10 +51,14 @@
 }
 
 @media (min-width: 1200px) {
-    #heroProfile {
-        .heroProfileContainer {
+    #heroContact {
+        .heroContactContainer {
             h1 {
-                font-size: 6.5vw;
+                // font-size: 5vw;
+            }
+
+            h2 {
+                font-size: 5vw;
             }
         }
     }

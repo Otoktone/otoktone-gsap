@@ -51,6 +51,7 @@
                 h4 {
                     font-weight: 300;
                     font-size: 8vw;
+                    text-transform: uppercase;
                 }
 
                 h5 {
@@ -70,33 +71,7 @@
 
             .stackContent {
                 p {
-                    color: rgba($color: $white, $alpha: 0.75);
-                    font-weight: 100;
-                    line-height: 25px;
                     text-align: justify;
-
-                    a {
-                        font-weight: 300;
-                        position: relative;
-                        padding-bottom: 2px;
-
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            left: 0;
-                            bottom: 0;
-                            width: 0;
-                            height: 1.5px;
-                            background-color: rgba($color: $pink, $alpha: 0.5);
-                            transition: width 0.5s ease-in-out;
-                        }
-
-                        &:hover {
-                            &::after {
-                                width: 100%;
-                            }
-                        }
-                    }
                 }
             }
         }

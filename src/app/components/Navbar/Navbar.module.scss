@@ -137,6 +137,7 @@
                     li {
                         display: flex;
                         padding-inline: 20px;
+                        line-height: normal;
 
                         a {
                             color: $white;
@@ -217,8 +218,6 @@
 
 @media (min-width: 1200px) {
     .navbar {
-        max-width: 1400px;
-        padding-inline: 20px;
         margin: auto;
 
         .navbarContainer {

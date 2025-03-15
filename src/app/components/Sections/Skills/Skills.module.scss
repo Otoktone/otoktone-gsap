@@ -65,6 +65,8 @@
                 font-family: $font-geist-sans;
                 transition: color .35s ease-in-out;
                 user-select: none;
+                line-height: normal;
+                font-weight: 300;
             }
 
             &:hover {

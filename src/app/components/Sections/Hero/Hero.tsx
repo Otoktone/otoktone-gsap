@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { fadeIn } from "@/app/utils/animation";
 import styles from "./Hero.module.scss";
 
@@ -22,14 +21,7 @@ const Hero = () => {
   return (
     <section id={styles.hero}>
       <div className={styles.heroHeaderContainer}>
-        <div ref={backgroundRef} className={styles.heroHeaderBackground}>
-          <Image
-            src={"/background_abstract_white.svg"}
-            alt="Otoktone background hero"
-            fill
-            priority
-          />
-        </div>
+        <div ref={backgroundRef} className={styles.heroHeaderBackground}></div>
         <div className={styles.heroHeaderTitle}>
           <h1 ref={h1Ref}>{title}</h1>
           <h2 ref={h2Ref}>{subTitle}</h2>

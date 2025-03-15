@@ -4,6 +4,9 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { Geist, Geist_Mono, Ubuntu } from "next/font/google";
 const Header = dynamic(() => import("@/app/components/Header/Header"));
 const Footer = dynamic(() => import("@/app/components/Footer/Footer"));
+const CookieBanner = dynamic(
+  () => import("@/app/components/CookieBanner/CookieBanner")
+);
 import "./styles/main.scss";
 
 const GTM: string = "GTM-KMBJZDN5";
@@ -99,6 +102,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );

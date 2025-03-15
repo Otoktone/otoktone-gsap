@@ -1,12 +1,12 @@
-@use './../../styles/variables.scss' as *;
+@use './../../../styles/variables.scss' as *;
 
-#heroProfile {
+#heroMentions {
     display: grid;
     position: relative;
     width: 100%;
     overflow: hidden;
 
-    .heroProfileContainer {
+    .heroMentionsContainer {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -17,16 +17,17 @@
         padding-inline: 40px;
         margin: auto;
 
-        .heroBackground {
+        .heroMentionsBackground {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             opacity: 0;
-            background-image: url("/abstract_background_profile.jpg");
+            background-image: url("/abstract_background_mentions.jpg");
             background-size: cover;
             background-repeat: no-repeat;
+            background-position: right;
         }
 
         h1 {
@@ -39,7 +40,7 @@
         }
 
         h2 {
-            font-size: 3.5vw;
+            font-size: 6.5vw;
             font-weight: 300;
             height: fit-content;
             opacity: 0;
@@ -48,11 +49,10 @@
 }
 
 @media (min-width: 768px) {
-    #heroProfile {
-        .heroProfileContainer {
+    #heroMentions {
+        .heroMentionsContainer {
             h1 {
                 text-align: center;
-                font-size: 8vw;
             }
 
             h2 {
@@ -63,10 +63,14 @@
 }
 
 @media (min-width: 1200px) {
-    #heroProfile {
-        .heroProfileContainer {
+    #heroMentions {
+        .heroMentionsContainer {
             h1 {
-                font-size: 6.5vw;
+                // font-size: 5vw;
+            }
+
+            h2 {
+                font-size: 5vw;
             }
         }
     }

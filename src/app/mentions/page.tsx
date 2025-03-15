@@ -1,12 +1,26 @@
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 
 export const metadata: Metadata = {
-  title: "Alexandre Desmot | Otoktone | Contact",
+  title: "Mentions légales | Otoktone",
   description: "Alexandre Desmot | Otoktone - Mentions légales",
 };
 
+const HeroMentions = dynamic(
+  () => import("@/app/mentions/components/Hero/HeroMentions")
+);
+
+const ContentMentions = dynamic(
+  () => import("@/app/mentions/components/Content/ContentMentions")
+);
+
 const Mentions = () => {
-  return <section id="mentions"></section>;
+  return (
+    <>
+      <HeroMentions />
+      <ContentMentions />
+    </>
+  );
 };
 
 export default Mentions;

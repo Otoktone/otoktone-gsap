@@ -83,4 +83,65 @@ h4,
 h5,
 h6 {
     color: $white;
+    text-wrap: pretty;
+}
+
+p {
+    color: rgba($color: $white, $alpha: 0.75);
+    font-weight: 100;
+    line-height: 25px;
+    text-wrap: pretty;
+
+    a {
+        font-weight: 300;
+        position: relative;
+        padding-bottom: 2px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1.5px;
+            background-color: rgba($color: $pink, $alpha: 0.5);
+            transition: width 0.5s ease-in-out;
+        }
+
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+ul {
+    padding-left: 40px;
+    margin: 20px 0;
+
+    li {
+        color: rgba($color: $white, $alpha: 0.75);
+        font-weight: 100;
+        line-height: 25px;
+        text-wrap: pretty;
+
+        &::marker {
+            color: rgba($color: $electric, $alpha: 0.8);
+        }
+    }
+}
+
+button {
+    color: rgba($color: $white, $alpha: 0.75);
+    font-weight: 100;
+    line-height: 25px;
+    border: 0;
+    background: transparent;
+    font-family: $font-geist-sans;
+    font-size: 16px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
