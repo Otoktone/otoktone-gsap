@@ -1,0 +1,40 @@
+@use "./../../../styles/variables.scss" as *;
+
+#profile {
+    display: grid;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid $dark;
+
+    .profileContainer {
+        display: grid;
+        width: 100%;
+        position: relative;
+        max-width: 1400px;
+        padding: 40px 20px;
+        margin: auto;
+        gap: 40px;
+
+        .headerProfile {
+            h3 {
+                font-family: $font-geist-mono;
+                opacity: 0.75;
+                text-transform: uppercase;
+            }
+        }
+
+        .contentProfile {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h5 {
+                font-size: 16px;
+                line-height: 40px;
+                opacity: 0.6;
+                text-align: right;
+            }
+        }
+    }
+}

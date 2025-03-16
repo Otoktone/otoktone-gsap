@@ -35,6 +35,7 @@
                 color: rgba($color: $electric, $alpha: 0.5);
                 transition: color 0.35s ease-in-out;
                 user-select: none;
+                font-family: $font-geist-mono;
 
                 &:before {
                     content: '';

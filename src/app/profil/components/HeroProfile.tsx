@@ -13,7 +13,7 @@ const HeroProfile = () => {
   const h2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    fadeIn(backgroundRef.current, 0, 0.35, 3);
+    fadeIn(backgroundRef.current, 0, 0.5, 3);
     fadeIn(h1Ref.current, 0, 0.65, 3);
     fadeIn(h2Ref.current, 0, 0.7, 3);
   }, []);

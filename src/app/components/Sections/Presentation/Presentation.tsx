@@ -8,7 +8,6 @@ import styles from "./Presentation.module.scss";
 gsap.registerPlugin(ScrollTrigger);
 
 const Presentation = () => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
   const linesRef = useRef<(HTMLParagraphElement | null)[]>([]);
 
   useEffect(() => {
@@ -45,7 +44,7 @@ const Presentation = () => {
 
   return (
     <section id={styles.presentation}>
-      <div ref={containerRef} className={styles.presentationContainer}>
+      <div className={styles.presentationContainer}>
         <div className={styles.textContainer}>
           {[
             "Web",

@@ -4,9 +4,9 @@ import { useEffect, useRef, useCallback } from "react";
 import { fadeInStaggered } from "@/app/utils/animation";
 import { splitText } from "@/app/utils/textUtils";
 import Image from "next/image";
-import styles from "./Stack.module.scss";
+import styles from "./Project.module.scss";
 
-const Stack = () => {
+const Project = () => {
   const h5refs = useRef<(HTMLHeadingElement | null)[]>([]);
   const isAnimating = useRef<boolean>(false);
   const setH5Ref = useCallback((el: HTMLHeadingElement | null) => {
@@ -45,46 +45,56 @@ const Stack = () => {
   }, []);
 
   return (
-    <section id={styles.stack}>
-      <div className={styles.stackContainer}>
+    <section id={styles.project}>
+      <div className={styles.projectContainer}>
         {/* VORTEX */}
-        <article className="stackArticle">
-          <div className={styles.stackTitle}>
+        <article className="projectArticle">
+          <div className={styles.projectTitle}>
             <h4>Vortex</h4>
             <h5 ref={setH5Ref}>{splitText("Aggrégateur de flux")}</h5>
           </div>
-          <div className={styles.stackImage}>
+          <div className={styles.projectImage}>
             <Image
-              src={"/stack/vortex.webp"}
+              src={"/project/vortex.webp"}
               alt={"Vortex - Aggrégation de flux - Site web Symfony"}
               width={650}
               height={315}
               loading="lazy"
             />
           </div>
-          <div className={styles.stackContent}>
+          <div className={styles.projectContent}>
             <p>
               Application développée avec{" "}
-              <a href="https://symfony.com/">Symfony</a>,{" "}
-              <a href="https://www.doctrine-project.org/">Doctrine</a>{" "}
-              <a href="https://webpack.js.org/">Webpack</a> et{" "}
-              <a href="https://www.docker.com/">Docker</a>. Génère, catégorise
-              et traite des articles issus de sources technologiques,
-              accessibles via un tableau de bord interactif.
+              <a href="https://symfony.com/" target="_blank">
+                Symfony
+              </a>
+              ,{" "}
+              <a href="https://www.doctrine-project.org/" target="_blank">
+                Doctrine
+              </a>{" "}
+              <a href="https://webpack.js.org/" target="_blank">
+                Webpack
+              </a>{" "}
+              et{" "}
+              <a href="https://www.docker.com/" target="_blank">
+                Docker
+              </a>
+              . Génère, catégorise et traite des articles issus de sources
+              technologiques, accessibles via un tableau de bord interactif.
             </p>
           </div>
         </article>
         {/* FRED GAFFORI */}
-        <article className="stackArticle">
-          <div className={styles.stackTitle}>
+        <article className="projectArticle">
+          <div className={styles.projectTitle}>
             <h4>FRED GAFFORI</h4>
             <h5 ref={setH5Ref}>
               {splitText("Photographe et réalisateur vidéo")}
             </h5>
           </div>
-          <div className={styles.stackImage}>
+          <div className={styles.projectImage}>
             <Image
-              src={"/stack/fred.webp"}
+              src={"/project/fred.webp"}
               alt={
                 "FRED GAFFORI - Photographe & Réalisateur Vidéo - Nice & Vannes"
               }
@@ -93,12 +103,14 @@ const Stack = () => {
               loading="lazy"
             />
           </div>
-          <div className={styles.stackContent}>
+          <div className={styles.projectContent}>
             <p>
               Basé à Nice et Vannes, spécialisé en événementiel, mariage,
               portrait, naissance, immobilier et musique. Site développé sous{" "}
-              <a href="https://wordpress.com/">WordPress</a> avec un thème
-              enfant pour une conception personnalisée.
+              <a href="https://wordpress.com/" target="_blank">
+                WordPress
+              </a>{" "}
+              avec un thème enfant pour une conception personnalisée.
             </p>
           </div>
         </article>
@@ -107,4 +119,4 @@ const Stack = () => {
   );
 };
 
-export default Stack;
+export default Project;

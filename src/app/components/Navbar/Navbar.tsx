@@ -66,28 +66,30 @@ const Navbar = () => {
           </div>
           <div className={styles.menu}>
             <ul>
-              {["Accueil", "Profil", "Contact"].map((text, index) => {
-                const href =
-                  text === "Accueil" ? "/" : `/${text.toLowerCase()}`;
-                return (
-                  <li
-                    key={index}
-                    className={styles.link}
-                    ref={(el) => {
-                      if (el) linksRef.current[index] = el;
-                    }}
-                  >
-                    <Link
-                      href={href}
-                      className={pathname === href ? styles.active : ""}
-                      onClick={closeMenu}
+              {["Accueil", "Portfolio", "Profil", "Contact"].map(
+                (text, index) => {
+                  const href =
+                    text === "Accueil" ? "/" : `/${text.toLowerCase()}`;
+                  return (
+                    <li
+                      key={index}
+                      className={styles.link}
+                      ref={(el) => {
+                        if (el) linksRef.current[index] = el;
+                      }}
                     >
-                      <span className="text1">{text}</span>
-                      <span className="text2">{text}</span>
-                    </Link>
-                  </li>
-                );
-              })}
+                      <Link
+                        href={href}
+                        className={pathname === href ? styles.active : ""}
+                        onClick={closeMenu}
+                      >
+                        <span className="text1">{text}</span>
+                        <span className="text2">{text}</span>
+                      </Link>
+                    </li>
+                  );
+                }
+              )}
             </ul>
             <div className={styles.socials}>
               <a href="https://github.com/Otoktone/" target="_blank">

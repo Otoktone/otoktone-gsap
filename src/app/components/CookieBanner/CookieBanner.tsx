@@ -38,8 +38,12 @@ export default function CookieBanner() {
         accepter ou refuser le suivi.
       </p>
       <div className={styles.coookieBtn}>
-        <button onClick={handleDecline}>Refuser</button>
-        <button onClick={handleAccept}>Accepter</button>
+        <button className={styles.declineCookie} onClick={handleDecline}>
+          Refuser
+        </button>
+        <button className={styles.acceptCookie} onClick={handleAccept}>
+          Accepter
+        </button>
       </div>
     </div>
   );

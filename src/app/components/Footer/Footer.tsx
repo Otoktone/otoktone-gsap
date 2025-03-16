@@ -104,20 +104,22 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.legals}>
-          {["Profil", "Contact", "Mentions légales"].map((text, i) => (
-            <Link
-              key={text}
-              href={`/${
-                text === "Mentions légales" ? "mentions" : text.toLowerCase()
-              }`}
-              ref={(el) => {
-                if (el) linksRef.current[i] = el;
-              }}
-            >
-              <span className="text1">{text}</span>
-              <span className="text2">{text}</span>
-            </Link>
-          ))}
+          {["Profil", "Portfolio", "Contact", "Mentions légales"].map(
+            (text, i) => (
+              <Link
+                key={text}
+                href={`/${
+                  text === "Mentions légales" ? "mentions" : text.toLowerCase()
+                }`}
+                ref={(el) => {
+                  if (el) linksRef.current[i] = el;
+                }}
+              >
+                <span className="text1">{text}</span>
+                <span className="text2">{text}</span>
+              </Link>
+            )
+          )}
         </div>
 
         <div className={styles.socials}>
