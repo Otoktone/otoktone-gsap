@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import styles from "./ContentMentions.module.scss";
 
 const ContentMentions = () => {
@@ -11,7 +13,7 @@ const ContentMentions = () => {
         {/* eslint-disable react/no-unescaped-entities */}
         <h3>1. Éditeur du site</h3>
         <p>
-          Le site <a href="https://otoktone.fr">otoktone.fr</a> est édité par :
+          Le site <Link href={"/"}>Otoktone.fr</Link> est édité par :
           <br />
           <br />
           Alexandre DESMOT
@@ -24,8 +26,7 @@ const ContentMentions = () => {
         </p>
         <h3>2. Hébergement</h3>
         <p>
-          Le site <a href="https://otoktone.fr">otoktone.fr</a> est hébergé par
-          :
+          Le site <Link href={"/"}>Otoktone.fr</Link> est hébergé par :
           <br />
           <br />
           <a href="https://www.scaleway.com/" target="_blank">
@@ -42,9 +43,9 @@ const ContentMentions = () => {
         <h3>3. Propriété intellectuelle</h3>
         <p>
           L'ensemble des contenus présents sur le site{" "}
-          <a href="https://otoktone.fr">otoktone.fr</a> (textes, images, logos,
-          vidéos, etc.) est protégé par le droit d'auteur et appartient à
-          Alexandre Desmot, sauf mention contraire.
+          <Link href={"/"}>Otoktone.fr</Link> (textes, images, logos, vidéos,
+          etc.) est protégé par le droit d'auteur et appartient à Alexandre
+          Desmot, sauf mention contraire.
           <br />
           Les images utilisées sur le site provenant de{" "}
           <a href="https://www.freepik.com/" target="_blank">
@@ -56,9 +57,8 @@ const ContentMentions = () => {
         </p>
         <h3>4. Données personnelles et cookies</h3>
         <p>
-          Le site <a href="https://otoktone.fr">otoktone.fr</a> utilise Google
-          Tag Manager pour collecter des statistiques anonymes sur l'utilisation
-          du site.
+          Le site <Link href={"/"}>Otoktone.fr</Link> utilise Google Tag Manager
+          pour collecter des statistiques anonymes sur l'utilisation du site.
         </p>
         <ul>
           <li>
@@ -88,9 +88,9 @@ const ContentMentions = () => {
         </ul>
         <h3>6. Liens hypertextes</h3>
         <p>
-          Le site <a href="https://otoktone.fr">otoktone.fr</a> peut contenir
-          des liens vers des sites tiers. L'éditeur du site n'a aucun contrôle
-          sur ces derniers et ne saurait être tenu responsable de leur contenu.
+          Le site <Link href={"/"}>Otoktone.fr</Link> peut contenir des liens
+          vers des sites tiers. L'éditeur du site n'a aucun contrôle sur ces
+          derniers et ne saurait être tenu responsable de leur contenu.
         </p>
         <h3>7. Contact</h3>
         <p>

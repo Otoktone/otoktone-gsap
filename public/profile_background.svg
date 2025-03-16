@@ -1,0 +1,44 @@
+<svg width="100%" height="100%" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Définition du gradient animé (vertical) -->
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="white" stop-opacity="0"></stop>
+      <stop offset="50%" stop-color="white" stop-opacity="0.8"></stop>
+      <stop offset="100%" stop-color="white" stop-opacity="0"></stop>
+    </linearGradient>
+
+    <!-- Masques animés avec des délais différents pour un effet décalé -->
+    <mask id="mask1">
+      <rect x="0" y="0" width="800" height="400" fill="url(#glowGradient)">
+        <animateTransform attributeName="transform" type="translate" values="0,-400; 0,400" keyTimes="0; 1" dur="4s" repeatCount="indefinite"/>
+      </rect>
+    </mask>
+    <mask id="mask2">
+      <rect x="0" y="0" width="800" height="400" fill="url(#glowGradient)">
+        <animateTransform attributeName="transform" type="translate" values="0,-400; 0,400" keyTimes="0; 1" dur="4s" begin="0.5s" repeatCount="indefinite"/>
+      </rect>
+    </mask>
+    <mask id="mask3">
+      <rect x="0" y="0" width="800" height="400" fill="url(#glowGradient)">
+        <animateTransform attributeName="transform" type="translate" values="0,-400; 0,400" keyTimes="0; 1" dur="4s" begin="1s" repeatCount="indefinite"/>
+      </rect>
+    </mask>
+  </defs>
+
+  <!-- Lignes angulaires simulant des circuits imprimés avec masques décalés -->
+  <g mask="url(#mask1)">
+    <polyline points="100,0 100,150 120,170 120,400" stroke="#00f0ff" stroke-width="2" fill="none" opacity="0.35"/>
+    <polyline points="400,0 400,180 380,200 380,400" stroke="#00f0ff" stroke-width="2" fill="none" opacity="0.35"/>
+    <polyline points="700,0 700,110 720,130 720,400" stroke="#00f0ff" stroke-width="2" fill="none" opacity="0.35"/>
+  </g>
+
+  <g mask="url(#mask2)">
+    <polyline points="200,0 200,120 180,140 180,400" stroke="#6A0DAD" stroke-width="2" fill="none" opacity="0.35"/>
+    <polyline points="500,0 500,130 520,150 520,400" stroke="#6A0DAD" stroke-width="2" fill="none" opacity="0.35"/>
+  </g>
+
+  <g mask="url(#mask3)">
+    <polyline points="300,0 300,100 320,120 320,400" stroke="#FF6EC7" stroke-width="2" fill="none" opacity="0.35"/>
+    <polyline points="600,0 600,170 580,190 580,400" stroke="#FF6EC7" stroke-width="2" fill="none" opacity="0.35"/>
+  </g>
+</svg>
