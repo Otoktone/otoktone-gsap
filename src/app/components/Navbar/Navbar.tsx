@@ -101,7 +101,10 @@ const Navbar = () => {
                   loading="lazy"
                 />
               </a>
-              <a href="https://github.com/Otoktone/" target="_blank">
+              <a
+                href="https://fr.linkedin.com/in/alexandre-desmot-145a34182"
+                target="_blank"
+              >
                 <Image
                   src="/icons/linkedin.svg"
                   width={20}

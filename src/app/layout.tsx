@@ -33,7 +33,7 @@ const ubuntu = Ubuntu({
 export const metadata: Metadata = {
   title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes",
   description:
-    "Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes, conception, développement et intégration d'application web. Design, création de site web et hébergement serveur en France.",
+    "Alexandre Desmot | Développeur Web à Vannes (Bretagne). Conception, développement et intégration d'applications web. Création de sites et hébergement en France.",
   metadataBase: new URL("https://otoktone.fr"),
   alternates: {
     canonical: "/",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes",
     description:
-      "Alexandre Desmot | Otoktone, conception et développement d'application web. Design, création de site web et hébergement serveur en Bretagne.",
+      "Alexandre Desmot | Développeur Web à Vannes (Bretagne). Conception, développement et intégration d'applications web. Création de sites et hébergement en France.",
     url: "https://otoktone.fr",
     type: "website",
     images: [
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes",
     description:
-      "Alexandre Desmot | Otoktone, conception et développement d'application web. Design, création de site web et hébergement serveur en Bretagne.",
+      "Alexandre Desmot | Développeur Web à Vannes (Bretagne). Conception, développement et intégration d'applications web. Création de sites et hébergement en France.",
     images: [
       {
         url: "/preview.jpg",

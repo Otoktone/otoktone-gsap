@@ -42,8 +42,8 @@ const Profile = () => {
               des solutions de communication vocale et en mettant en place des
               plateformes de discussion pour nos communautés. Cela m'a également
               permis de concevoir des calendriers de compétition et d'optimiser
-              l'expérience utilisateur au sein de nos équipes. C'est à ce
-              moment-là que j'ai découvert les outils d'
+              l'expérience utilisateur au sein de nos équipes. C'est à cette
+              époque que j'ai découvert les outils d'
               <a href="https://www.adobe.com/" target="_blank">
                 Adobe
               </a>
@@ -51,16 +51,16 @@ const Profile = () => {
               des logos, des bannières et des visuels pour nos projets en ligne.
             </p>
             <p>
-              Mon expérience s'est enrichie au fil du temps, passant même par
-              une collaboration avec une mairie où j'ai géré le contenu des
-              publications en ligne tout en assurant la maintenance du site.
-              C'est à ce moment-là que j'ai réalisé que le web n'était pas
-              seulement un passe-temps, mais bien une passion et un métier à
+              Mon expérience s'est enrichie au fil du temps, notamment une
+              collaboration avec une mairie, où j'ai géré le contenu des
+              publications en ligne, tout en assurant la maintenance technique
+              du site. C'est à ce moment-là que j'ai réalisé que le web n'était
+              pas seulement un passe-temps, mais bien une passion et un métier à
               part entière.
             </p>
             <p>
-              C'est donc tout naturellement que j'ai décidé de me perfectionner
-              en suivant une formation chez{" "}
+              Tout naturellement, j'ai décidé de me perfectionner en suivant une
+              formation chez{" "}
               <a href="https://openclassrooms.com/" target="_blank">
                 OpenClassrooms
               </a>{" "}

@@ -6,7 +6,7 @@ import styles from "./Hero.module.scss";
 
 const Hero = () => {
   const subTitle = "Otoktone";
-  const title = "Conception et développement d'application web";
+  const title = "Conception et développement d'applications web";
 
   const backgroundRef = useRef<HTMLDivElement>(null);
   const h1Ref = useRef<HTMLHeadingElement>(null);
