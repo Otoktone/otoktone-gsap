@@ -47,6 +47,7 @@ const Project = () => {
 
   return (
     <section id={styles.project}>
+      {/* eslint-disable react/no-unescaped-entities */}
       <div className={styles.projectContainer}>
         {/* OTOKTONE */}
         <article className="projectArticle">
@@ -155,9 +156,7 @@ const Project = () => {
           </div>
         </article>
       </div>
-      <div className={styles.projectLink}>
-        <a href="">LIEN</a>
-      </div>
+      {/* eslint-enable react/no-unescaped-entities */}
     </section>
   );
 };
