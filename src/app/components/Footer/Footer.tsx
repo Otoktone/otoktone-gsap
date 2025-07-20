@@ -157,7 +157,18 @@ const Footer = () => {
       </div>
       <div className={styles.copyright}>
         <span>
-          <Link href={"/"}>Otoktone</Link> | Alexandre Desmot | © {year}
+          <Link href={"/"}>Otoktone</Link>| Alexandre Desmot |{" "}
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              localStorage.removeItem("cookiesAccepted");
+              window.dispatchEvent(new Event("cookiesAcceptedChanged"));
+            }}
+          >
+            Cookies
+          </a>{" "}
+          | © {year}
         </span>
       </div>
     </footer>

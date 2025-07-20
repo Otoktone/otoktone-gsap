@@ -13,6 +13,16 @@ export default function CookieBanner() {
     }
   }, []);
 
+  useEffect(() => {
+    const handleReopen = () => {
+      setShowBanner(true);
+    };
+    window.addEventListener("cookiesAcceptedChanged", handleReopen);
+    return () => {
+      window.removeEventListener("cookiesAcceptedChanged", handleReopen);
+    };
+  }, []);
+
   const handleAccept = () => {
     document.cookie = "cookie_consent=granted; path=/; max-age=31536000";
     localStorage.setItem("cookie_consent", "granted");
