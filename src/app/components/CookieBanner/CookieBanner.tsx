@@ -35,12 +35,13 @@ export default function CookieBanner() {
     <div className={styles.cookieBanner}>
       <p>
         Nous utilisons des cookies pour améliorer votre expérience. Vous pouvez
-        accepter ou refuser le suivi.
+        accepter ou refuser le suivi.{" "}
+        <button className={styles.declineCookie} onClick={handleDecline}>
+          Continuer sans accepter
+        </button>
+        .
       </p>
       <div className={styles.coookieBtn}>
-        <button className={styles.declineCookie} onClick={handleDecline}>
-          Refuser
-        </button>
         <button className={styles.acceptCookie} onClick={handleAccept}>
           Accepter
         </button>

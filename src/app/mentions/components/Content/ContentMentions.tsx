@@ -3,7 +3,6 @@ import Link from "next/link";
 import styles from "./ContentMentions.module.scss";
 
 const ContentMentions = () => {
-  const address: string = "16 allée des paludiers - 44510 LE POULIGUEN";
   const mail: string = "alexandre.desmot@otoktone.fr";
   const phone: string = "+33635443347";
 
@@ -17,8 +16,6 @@ const ContentMentions = () => {
           <br />
           <br />
           Alexandre DESMOT
-          <br />
-          Adresse : {address}
           <br />
           Email : <a href={`mailto:${mail}`}>{mail}</a>
           <br />

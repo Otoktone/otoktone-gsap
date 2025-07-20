@@ -8,14 +8,10 @@
     width: 100%;
     padding: 40px;
     border-top: 1px solid $dark;
-    background: $black;
+    background: rgba($color: $black, $alpha: 0.75);
     display: grid;
     gap: 20px;
-
-    p {
-        display: flex;
-        align-items: center;
-    }
+    align-items: center;
 
     .coookieBtn {
         display: flex;

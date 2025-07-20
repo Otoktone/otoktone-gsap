@@ -25,7 +25,7 @@ const Profile = () => {
           <div className={styles.contentTextProfile}>
             {/* eslint-disable react/no-unescaped-entities */}
             <p>
-              Bienvenue sur <Link href={"/"}>Otoktone.fr</Link>,
+              Bienvenue sur <Link href={"/"}>OTOKTONE</Link>,
             </p>
             <p>
               Je suis Alexandre, un passionné de développement web résidant en
@@ -83,7 +83,9 @@ const Profile = () => {
               mes projets et mes compétences, tout en partageant les valeurs qui
               me sont chères.
             </p>
-            <h3>Alexandre Desmot | Otoktone | Développeur Web</h3>
+            <h3>
+              Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes
+            </h3>
             {/* eslint-enable react/no-unescaped-entities */}
           </div>
         </div>
