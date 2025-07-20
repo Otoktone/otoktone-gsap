@@ -11,8 +11,17 @@ const HeroPortfolio = dynamic(
   () => import("@/app/portfolio/components/HeroPortfolio")
 );
 
+const MainPortfolio = dynamic(
+  () => import("@/app/portfolio/components/MainPortfolio")
+);
+
 const Portfolio = () => {
-  return <HeroPortfolio />;
+  return (
+    <>
+      <HeroPortfolio />
+      <MainPortfolio />
+    </>
+  );
 };
 
 export default Portfolio;
