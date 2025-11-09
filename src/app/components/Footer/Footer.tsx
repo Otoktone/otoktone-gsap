@@ -157,7 +157,7 @@ const Footer = () => {
       </div>
       <div className={styles.copyright}>
         <span>
-          <Link href={"/"}>Otoktone</Link>| Alexandre Desmot |{" "}
+          <Link href={"/"}>Otoktone</Link> | Alexandre Desmot |{" "}
           <a
             href="#"
             onClick={(e) => {

@@ -145,7 +145,7 @@ const Project = () => {
           </div>
           <div className={styles.projectContent}>
             <p>
-              Basé à <strong>Nice</strong> et <strong>Vannes</strong>,
+              Photographe basé à <strong>Nice</strong> et <strong>Vannes</strong>,
               spécialisé en événementiel, mariage, portrait, naissance,
               immobilier et musique. Site développé sous{" "}
               <a href="https://wordpress.com/" target="_blank">

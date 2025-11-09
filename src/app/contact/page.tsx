@@ -1,18 +1,27 @@
-import { Metadata } from "next";
-import dynamic from "next/dynamic";
+import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
-  title: "Contact | Otoktone",
-  description:
-    "Contactez Alexandre Desmot, développeur web en Bretagne à Vannes et fondateur du site Otoktone",
+    title: 'Alexandre Desmot | Otoktone | Contact',
+    description:
+        'Contactez Alexandre Desmot, développeur web en Bretagne à Vannes et fondateur du site Otoktone',
 };
 
 const HeroContact = dynamic(
-  () => import("@/app/contact/components/Hero/HeroContact")
+    () => import('@/app/contact/components/Hero/HeroContact')
+);
+
+const Informations = dynamic(
+    () => import('@/app/contact/components/Informations/Informations')
 );
 
 const Contact = () => {
-  return <HeroContact />;
+    return (
+        <>
+            <HeroContact />
+            <Informations />
+        </>
+    );
 };
 
 export default Contact;

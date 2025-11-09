@@ -1,53 +1,52 @@
-@use './../../../styles/variables.scss' as *;
+@use "./../../../styles/variables.scss" as *;
 
 #contentMentions {
-    padding: 40px 0;
-    border-top: 1px solid $dark;
-
-    background-size: 100% 100%;
-    background-position: 0px 0px, 0px 0px, 0px 0px;
-    background-image: radial-gradient(250px 250px at 65% 55%, #00F0FF47 0%, #00F0FF00 100%), radial-gradient(225px 225px at 83% 35%, #6A0DAD3D 0%, #6A0DAD00 100%), radial-gradient(150px 150px at 80% 50%, #FF6EC729 0%, #FF6EC700 100%);
-
-    .mentionsContainer {
-        max-width: 1200px;
-        padding: 40px;
-        margin: auto;
-        position: relative;
-
-        h3 {
-            &:not(:first-of-type) {
-                margin-top: 40px;
-            }
-
-            color: rgba($color: $white, $alpha: 0.8);
-        }
-
-        p {
-            margin-top: 20px;
-        }
-
-        &::before {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            content: '';
-            width: 10px;
-            height: 10px;
-            border-top: 1px solid rgba($color: $white, $alpha: 0.75);
-            border-left: 1px solid rgba($color: $white, $alpha: 0.75);
-            transition: all 0.35s ease-in-out;
-        }
-
-        &::after {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            content: '';
-            width: 10px;
-            height: 10px;
-            border-bottom: 1px solid rgba($color: $white, $alpha: 0.75);
-            border-right: 1px solid rgba($color: $white, $alpha: 0.75);
-            transition: all 0.35s ease-in-out;
-        }
+  padding: 40px 0;
+  border-top: 1px solid $dark;
+  background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px, 0px 0px;
+  background-image: radial-gradient(
+      250px 250px at 65% 55%,
+      #00f0ff47 0%,
+      #00f0ff00 100%
+    ),
+    radial-gradient(225px 225px at 83% 35%, #6a0dad3d 0%, #6a0dad00 100%),
+    radial-gradient(150px 150px at 80% 50%, #ff6ec729 0%, #ff6ec700 100%);
+  .mentionsContainer {
+    max-width: 1200px;
+    padding: 40px;
+    margin: auto;
+    position: relative;
+    h3 {
+      &:not(:first-of-type) {
+        margin-top: 40px;
+      }
+      color: rgba($color: $white, $alpha: 0.8);
     }
+    p {
+      margin-top: 20px;
+    }
+    &::before {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-top: 1px solid rgba($color: $white, $alpha: 0.75);
+      border-left: 1px solid rgba($color: $white, $alpha: 0.75);
+      transition: all 0.35s ease-in-out;
+    }
+    &::after {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-bottom: 1px solid rgba($color: $white, $alpha: 0.75);
+      border-right: 1px solid rgba($color: $white, $alpha: 0.75);
+      transition: all 0.35s ease-in-out;
+    }
+  }
 }

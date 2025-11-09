@@ -1,0 +1,39 @@
+@use './../../../styles/variables.scss' as *;
+
+#informations {
+    display: grid;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    // background-size: 100% 100%;
+    // background-position: 0px 0px, 0px 0px, 0px 0px;
+    // background-image: radial-gradient(
+    //         250px 250px at 65% 55%,
+    //         #00f0ff47 0%,
+    //         #00f0ff00 100%
+    //     ),
+    //     radial-gradient(225px 225px at 83% 35%, #6a0dad3d 0%, #6a0dad00 100%),
+    //     radial-gradient(150px 150px at 80% 50%, #ff6ec729 0%, #ff6ec700 100%);
+    .informationsContainer {
+        max-width: 1400px;
+        padding: 40px 20px;
+        margin: auto;
+        .contact {
+            width: fit-content;
+            margin: auto;
+            padding: 40px 20px;
+            border-radius: 4px;
+            display: grid;
+            row-gap: 40px;
+            .contactHeader {
+                display: grid;
+                row-gap: 10px;
+                h3 {
+                    font-size: clamp(20px, 3.5vw, 100vw);
+                    text-transform: uppercase;
+                    color: rgba($color: $white, $alpha: 0.85);
+                }
+            }
+        }
+    }
+}

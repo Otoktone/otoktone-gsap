@@ -1,4 +1,4 @@
-@use './../../styles/variables.scss' as *;
+@use './../../../styles/variables.scss' as *;
 
 #heroProfile {
     display: grid;
@@ -24,7 +24,7 @@
             right: 0;
             bottom: 0;
             opacity: 0;
-            background-image: url("/abstract_background_profile.jpg");
+            background-image: url('/abstract_background_profile.jpg');
             background-size: cover;
             background-repeat: no-repeat;
         }

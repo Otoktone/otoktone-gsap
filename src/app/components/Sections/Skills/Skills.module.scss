@@ -1,4 +1,4 @@
-@use "./../../../styles/variables.scss" as *;
+@use './../../../styles/variables.scss' as *;
 
 #skills {
     display: grid;
@@ -6,7 +6,6 @@
     width: 100%;
     overflow: hidden;
     border-top: 1px solid $dark;
-
     .skillsContainer {
         display: grid;
         width: 100%;
@@ -16,7 +15,6 @@
         grid-template-columns: 1fr;
         row-gap: 40px;
         column-gap: 20px;
-
         .skillCard {
             position: relative;
             padding: 20px;
@@ -26,7 +24,6 @@
             flex-direction: column;
             justify-content: space-between;
             transition: all 0.7s ease-in-out;
-
             h3 {
                 position: relative;
                 padding-left: 20px;
@@ -36,7 +33,6 @@
                 transition: color 0.35s ease-in-out;
                 user-select: none;
                 font-family: $font-geist-mono;
-
                 &:before {
                     content: '';
                     position: absolute;
@@ -46,46 +42,53 @@
                     background: rgba($color: $electric, $alpha: 0.5);
                     transition: all 0.35s ease-in-out;
                 }
-
                 &::after {
                     position: absolute;
                     right: 0;
                     bottom: 8px;
-                    content: "";
+                    content: '';
                     width: 10px;
                     height: 10px;
                     border-top: 1px solid rgba($color: $white, $alpha: 0.5);
                     border-right: 1px solid rgba($color: $white, $alpha: 0.5);
-                    transition: all .35s ease-in-out;
+                    transition: all 0.35s ease-in-out;
                 }
             }
-
             p {
                 color: rgba($color: $white, $alpha: 0.5);
                 font-size: 4vw;
                 font-family: $font-geist-sans;
-                transition: color .35s ease-in-out;
+                transition: color 0.35s ease-in-out;
                 user-select: none;
                 line-height: normal;
                 font-weight: 300;
             }
-
             &:hover {
                 background: rgba($color: $dark, $alpha: 0.8);
-
+                h3 {
+                    color: rgba($color: $electric, $alpha: 0.75);
+                    &::before {
+                        background: rgba($color: $electric, $alpha: 0.75);
+                    }
+                    &::after {
+                        border-top: 1px solid rgba($color: $white, $alpha: 0.5);
+                        border-right: 1px solid
+                            rgba($color: $white, $alpha: 0.5);
+                    }
+                }
+                p {
+                    color: rgba($color: $white, $alpha: 0.75);
+                }
+            }
+            &.active {
+                background: rgba($color: $dark, $alpha: 0.8);
                 h3 {
                     color: rgba($color: $electric, $alpha: 0.75);
 
                     &::before {
                         background: rgba($color: $electric, $alpha: 0.75);
                     }
-
-                    &::after {
-                        border-top: 1px solid rgba($color: $white, $alpha: 0.5);
-                        border-right: 1px solid rgba($color: $white, $alpha: 0.5);
-                    }
                 }
-
                 p {
                     color: rgba($color: $white, $alpha: 0.75);
                 }
@@ -99,12 +102,10 @@
         .skillsContainer {
             max-width: 95vw;
             grid-template-columns: repeat(2, 1fr);
-
             .skillCard {
                 padding: 1.5vw 2vw;
                 height: 35vw;
                 background: rgba($color: $dark, $alpha: 0.4);
-
                 p {
                     font-size: 2.5vw;
                 }
@@ -117,30 +118,23 @@
     #skills {
         .skillsContainer {
             grid-template-columns: repeat(4, 1fr);
-
             .skillCard {
                 height: 25vw;
-
-                &:nth-child(n+1) {
+                &:nth-child(n + 1) {
                     grid-area: 1 / 3 / 2 / 4;
                 }
-
-                &:nth-child(n+2) {
+                &:nth-child(n + 2) {
                     grid-area: 1 / 4 / 2 / 5;
                 }
-
-                &:nth-child(n+3) {
+                &:nth-child(n + 3) {
                     grid-area: 2 / 1 / 3 / 2;
                 }
-
-                &:nth-child(n+4) {
+                &:nth-child(n + 4) {
                     grid-area: 2 / 2 / 3 / 3;
                 }
-
-                &:nth-child(n+5) {
+                &:nth-child(n + 5) {
                     grid-area: 2 / 3 / 3 / 4;
                 }
-
                 p {
                     font-size: 1.5vw;
                 }
