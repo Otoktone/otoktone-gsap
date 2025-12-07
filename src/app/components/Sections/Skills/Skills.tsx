@@ -19,20 +19,20 @@ const Skills = () => {
         {
             name: 'Développement',
             description:
-                "Création de sites web et d'applications web sur mesure, en utilisant les technologies et normes actuelles.",
+                "Création de sites web et d'applications web sur mesure.",
         },
         {
             name: 'Hébergement',
             description:
-                "Gestion complète des solutions d'hébergement, incluant la configuration de serveurs, l'optimisation des performances et de la sécurité.",
+                "Solutions d'hébergement, incluant la configuration de serveurs, l'optimisation des performances et de la sécurité.",
         },
         {
-            name: 'SEO',
+            name: 'Référencement',
             description:
-                'Optimisation complète pour les moteurs de recherche, amélioration des performances et optimisation du contenu pour augmenter la visibilité et le référencement.',
+                'Optimisation complète pour les moteurs de recherche, amélioration des performances et optimisation du contenu pour augmenter la visibilité.',
         },
         {
-            name: 'Maintenance',
+            name: 'Sécurité',
             description:
                 'Assistance et mises à jour régulières, sauvegardes sécurisées et support technique pour garantir la sécurité, les performances et la pérennité.',
         },

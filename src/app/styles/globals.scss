@@ -1,4 +1,4 @@
-@use "variables" as *;
+@use 'variables' as *;
 
 * {
     box-sizing: border-box;
@@ -24,7 +24,8 @@
 
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    box-shadow: rgba($white, 0.1) -30px -30px 60px -12px inset, rgba($electric, 0.15) -60px -30px 60px -18px inset;
+    box-shadow: rgba($white, 0.1) -30px -30px 60px -12px inset,
+        rgba($electric, 0.15) -60px -30px 60px -18px inset;
 }
 
 body {
@@ -98,7 +99,7 @@ p {
         padding-bottom: 2px;
 
         &::after {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             bottom: 0;

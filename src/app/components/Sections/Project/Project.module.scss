@@ -1,4 +1,4 @@
-@use "./../../../styles/variables.scss" as *;
+@use './../../../styles/variables.scss' as *;
 
 #project {
     display: grid;
@@ -139,6 +139,14 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    #project {
+        .projectContainer {
+            gap: 120px;
         }
     }
 }
