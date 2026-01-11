@@ -54,6 +54,10 @@ const Project = () => {
                     <div className={styles.projectTitle}>
                         <h4>Otoktone</h4>
                         <h5 ref={setH5Ref}>{splitText('Portfolio')}</h5>
+                        <div className={styles.projectTitleStack}>
+                            <span>Next.js</span>
+                            <span>React</span>
+                        </div>
                     </div>
                     <div className={styles.projectImage}>
                         <Image
@@ -101,6 +105,9 @@ const Project = () => {
                         <h5 ref={setH5Ref}>
                             {splitText('Aggrégateur de flux')}
                         </h5>
+                        <div className={styles.projectTitleStack}>
+                            <span>Symfony</span>
+                        </div>
                     </div>
                     <div className={styles.projectImage}>
                         <Image
@@ -115,7 +122,7 @@ const Project = () => {
                     </div>
                     <div className={styles.projectContent}>
                         <p>
-                            Application développée avec{' '}
+                            Vortex est une application développée avec{' '}
                             <a href="https://symfony.com/" target="_blank">
                                 Symfony
                             </a>
@@ -134,9 +141,11 @@ const Project = () => {
                             <a href="https://www.docker.com/" target="_blank">
                                 Docker
                             </a>
-                            . Génère, catégorise et traite des articles issus de
-                            sources technologiques, accessibles via un tableau
-                            de bord interactif.
+                            . permettant de récupérer des articles depuis des
+                            flux RSS (XML) de sources technologiques, de les
+                            catégoriser et de les traiter au sein d’un tableau
+                            de bord interactif conçu pour la gestion de la
+                            veille technologique.
                         </p>
                     </div>
                 </article>
@@ -147,6 +156,9 @@ const Project = () => {
                         <h5 ref={setH5Ref}>
                             {splitText('Photographe et réalisateur vidéo')}
                         </h5>
+                        <div className={styles.projectTitleStack}>
+                            <span>WordPress</span>
+                        </div>
                     </div>
                     <div className={styles.projectImage}>
                         <Image
@@ -161,14 +173,21 @@ const Project = () => {
                     </div>
                     <div className={styles.projectContent}>
                         <p>
-                            Site réalisé avec{' '}
+                            CSite vitrine conçu avec{' '}
                             <a href="https://wordpress.com/" target="_blank">
                                 WordPress
                             </a>{' '}
-                            et un thème enfant pour une conception
-                            personnalisée. Frédéric est un photographe basé à{' '}
-                            <strong>Nice</strong> et originaire de{' '}
-                            <strong>Vannes</strong>.
+                            et un thème enfant entièrement personnalisé, mettant
+                            en valeur l’univers visuel de{' '}
+                            <strong>Frédéric Gaffori</strong> photographe et
+                            réalisateur vidéo. e projet met l’accent sur
+                            l’esthétique, la lisibilité et la valorisation des
+                            contenus visuels, tout en offrant une navigation
+                            fluide et une gestion autonome des contenus.
+                            Frédéric exerce entre <strong>Nice</strong> et{' '}
+                            <strong>Vannes</strong>, et se spécialise dans la
+                            photographie de mariage, le portrait, l’événementiel
+                            ainsi que la réalisation vidéo.
                         </p>
                     </div>
                 </article>
