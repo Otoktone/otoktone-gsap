@@ -141,7 +141,7 @@ const Project = () => {
                             <a href="https://www.docker.com/" target="_blank">
                                 Docker
                             </a>
-                            . permettant de récupérer des articles depuis des
+                            . Permettant de récupérer des articles depuis des
                             flux RSS (XML) de sources technologiques, de les
                             catégoriser et de les traiter au sein d’un tableau
                             de bord interactif conçu pour la gestion de la
@@ -173,14 +173,14 @@ const Project = () => {
                     </div>
                     <div className={styles.projectContent}>
                         <p>
-                            CSite vitrine conçu avec{' '}
+                            Site vitrine conçu avec{' '}
                             <a href="https://wordpress.com/" target="_blank">
                                 WordPress
                             </a>{' '}
                             et un thème enfant entièrement personnalisé, mettant
                             en valeur l’univers visuel de{' '}
-                            <strong>Frédéric Gaffori</strong> photographe et
-                            réalisateur vidéo. e projet met l’accent sur
+                            <strong>Frédéric Gaffori</strong>, photographe et
+                            réalisateur vidéo. Ce projet met l’accent sur
                             l’esthétique, la lisibilité et la valorisation des
                             contenus visuels, tout en offrant une navigation
                             fluide et une gestion autonome des contenus.
