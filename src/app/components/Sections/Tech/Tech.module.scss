@@ -1,4 +1,4 @@
-@use "./../../../styles/variables.scss" as *;
+@use './../../../styles/variables.scss' as *;
 
 #tech {
     display: flex;
@@ -6,7 +6,6 @@
     width: 100%;
     overflow: hidden;
     border-top: 1px solid $dark;
-
     .techContainer {
         display: flex;
         width: 100%;
@@ -17,7 +16,6 @@
         max-width: 1600px;
         max-height: 660px;
         margin: auto;
-
         .techLayout {
             position: absolute;
             top: 0;
@@ -25,23 +23,24 @@
             right: 0;
             bottom: 0;
             z-index: 1;
-            background-image: linear-gradient(180deg, $black 0%, #FFFFFF00 35%), linear-gradient(270deg, $black 0%, #FFFFFF00 35%), linear-gradient(0deg, $black 0%, #FFFFFF00 35%), linear-gradient(90deg, $black 0%, #FFFFFF00 35%);
+            background-image: linear-gradient(180deg, $black 0%, #ffffff00 35%),
+                linear-gradient(270deg, $black 0%, #ffffff00 35%),
+                linear-gradient(0deg, $black 0%, #ffffff00 35%),
+                linear-gradient(90deg, $black 0%, #ffffff00 35%);
             pointer-events: none;
         }
-
         .leftColumn,
         .rightColumn {
             display: flex;
             flex-direction: column;
             position: relative;
             width: 50%;
-
+            pointer-events: none;
             .techCard {
                 padding: 20px;
                 background: rgba($color: $dark, $alpha: 0.75);
                 min-height: 200px;
                 margin: 10px 0;
-
                 a {
                     display: flex;
                     flex-direction: column;
@@ -50,7 +49,6 @@
                     align-items: center;
                     height: 100%;
                     position: relative;
-
                     img {
                         object-fit: contain;
                         opacity: 0.9;
@@ -59,11 +57,9 @@
                         width: 100%;
                         height: 100%;
                     }
-
                     h5 {
                         color: rgba($color: $white, $alpha: 0.8);
                     }
-
                     &::before {
                         position: absolute;
                         right: 0;
@@ -72,30 +68,16 @@
                         width: 10px;
                         height: 10px;
                         border-top: 1px solid rgba($color: $purple, $alpha: 0.8);
-                        border-right: 1px solid rgba($color: $purple, $alpha: 0.8);
+                        border-right: 1px solid
+                            rgba($color: $purple, $alpha: 0.8);
                         transition: all 0.35s ease-in-out;
                     }
-
-                    &:hover {
-                        &::before {
-                            border-top: 1px solid rgba($color: $pink, $alpha: 0.8);
-                            border-right: 1px solid rgba($color: $pink, $alpha: 0.8);
-                        }
-                    }
                 }
-
-                &:hover {}
-            }
-
-            &:hover {
-                animation-play-state: paused;
             }
         }
-
         .leftColumn {
             animation: scrollLeftColumn 60s linear infinite;
         }
-
         .rightColumn {
             animation: scrollRightColumn 60s linear infinite;
         }
@@ -119,5 +101,31 @@
 
     100% {
         transform: translateY(0%);
+    }
+}
+
+@media (min-width: 992px) {
+    #tech {
+        .techContainer {
+            .leftColumn,
+            .rightColumn {
+                pointer-events: all;
+                &:hover {
+                    animation-play-state: paused;
+                }
+                .techCard {
+                    a {
+                        &:hover {
+                            &::before {
+                                border-top: 1px solid
+                                    rgba($color: $pink, $alpha: 0.8);
+                                border-right: 1px solid
+                                    rgba($color: $pink, $alpha: 0.8);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
