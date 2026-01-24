@@ -56,7 +56,6 @@ const Project = () => {
                         <h5 ref={setH5Ref}>{splitText('Portfolio')}</h5>
                         <div className={styles.projectTitleStack}>
                             <span>Next.js</span>
-                            <span>React</span>
                         </div>
                     </div>
                     <div className={styles.projectImage}>
