@@ -3,67 +3,70 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 
 import styles from './Main.module.scss';
 import { projects } from './projectsData';
 import Image from 'next/image';
 
 const Main = () => {
-    useEffect(() => {
+    useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        const cards = document.querySelectorAll(`.${styles.projectCard}`);
+        const ctx = gsap.context(() => {
+            const cards = document.querySelectorAll(`.${styles.projectCard}`);
 
-        cards.forEach((card) => {
-            const title = card.querySelector(`.${styles.projectTitle}`);
-            const tags = card.querySelectorAll(`.${styles.projectTech} span`);
+            cards.forEach((card) => {
+                const title = card.querySelector(`.${styles.projectTitle}`);
+                const tags = card.querySelectorAll(
+                    `.${styles.projectTech} span`
+                );
 
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top 75%',
-                    toggleActions: 'play reverse play reverse',
-                },
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 75%',
+                        toggleActions: 'play reverse play reverse',
+                    },
+                });
+
+                tl.from(card, {
+                    opacity: 0,
+                    y: 40,
+                    duration: 0.6,
+                    ease: 'power3.out',
+                });
+
+                tl.from(
+                    title?.children || [],
+                    {
+                        opacity: 0,
+                        y: 20,
+                        duration: 0.4,
+                        ease: 'power2.out',
+                        stagger: 0.05,
+                    },
+                    '-=0.2'
+                );
+
+                tl.from(
+                    tags,
+                    {
+                        opacity: 0,
+                        y: 10,
+                        duration: 0.3,
+                        ease: 'power2.out',
+                        stagger: 0.05,
+                    },
+                    '-=0.1'
+                );
             });
 
-            // Cards
-            tl.from(card, {
-                opacity: 0,
-                y: 40,
-                duration: 0.6,
-                ease: 'power3.out',
-            });
-
-            // Titles
-            tl.from(
-                title?.children || [],
-                {
-                    opacity: 0,
-                    y: 20,
-                    duration: 0.4,
-                    ease: 'power2.out',
-                    stagger: 0.05,
-                },
-                '-=0.2'
-            );
-
-            // Tags
-            tl.from(
-                tags,
-                {
-                    opacity: 0,
-                    y: 10,
-                    duration: 0.3,
-                    ease: 'power2.out',
-                    stagger: 0.05,
-                },
-                '-=0.1'
-            );
+            ScrollTrigger.refresh();
         });
 
         return () => {
-            ScrollTrigger.getAll().forEach((st) => st.kill());
+            ctx.revert();
         };
     }, []);
 
