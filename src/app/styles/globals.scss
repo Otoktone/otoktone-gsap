@@ -47,7 +47,6 @@ a {
     text-decoration: none;
     color: rgba($color: $white, $alpha: 0.8);
     position: relative;
-
     &.blank {
         display: flex;
         align-items: center;
@@ -55,7 +54,6 @@ a {
         margin-right: 40px;
         gap: 10px;
         width: fit-content;
-
         &::before {
             position: absolute;
             right: 0;
@@ -67,7 +65,6 @@ a {
             border-right: 1px solid rgba($color: $purple, $alpha: 0.8);
             transition: all 0.35s ease-in-out;
         }
-
         &:hover {
             &::before {
                 border-top: 1px solid rgba($color: $pink, $alpha: 0.8);
@@ -75,6 +72,12 @@ a {
             }
         }
     }
+    // &.internal-link {
+    //     padding: 20px;
+    //     text-transform: uppercase;
+    //     font-weight: 900;
+    //     font-size: clamp(40px, 8vw, 120px);
+    // }
 }
 
 h1,
@@ -92,12 +95,10 @@ p {
     font-weight: 100;
     line-height: 25px;
     text-wrap: pretty;
-
     a {
         font-weight: 300;
         position: relative;
         padding-bottom: 2px;
-
         &::after {
             content: '';
             position: absolute;
@@ -108,7 +109,6 @@ p {
             background-color: rgba($color: $pink, $alpha: 0.5);
             transition: width 0.5s ease-in-out;
         }
-
         &:hover {
             &::after {
                 width: 100%;
@@ -120,13 +120,11 @@ p {
 ul {
     padding-left: 20px;
     margin: 20px 0;
-
     li {
         color: rgba($color: $white, $alpha: 0.75);
         font-weight: 100;
         line-height: 25px;
         text-wrap: pretty;
-
         &::marker {
             color: rgba($color: $electric, $alpha: 0.8);
         }
@@ -141,7 +139,6 @@ button {
     background: transparent;
     font-family: $font-geist-sans;
     font-size: 16px;
-
     &:hover {
         cursor: pointer;
     }

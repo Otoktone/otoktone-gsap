@@ -4,6 +4,7 @@ import { useEffect, useRef, useCallback } from 'react';
 import { fadeInStaggered } from '@/app/utils/animation';
 import { splitText } from '@/app/utils/textUtils';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './Project.module.scss';
 
 const Project = () => {
@@ -178,19 +179,31 @@ const Project = () => {
                             </a>{' '}
                             et un thème enfant entièrement personnalisé, mettant
                             en valeur l’univers visuel de{' '}
-                            <strong>Frédéric Gaffori</strong>, photographe et
-                            réalisateur vidéo. Ce projet met l’accent sur
-                            l’esthétique, la lisibilité et la valorisation des
-                            contenus visuels, tout en offrant une navigation
-                            fluide et une gestion autonome des contenus.
-                            Frédéric exerce entre <strong>Nice</strong> et{' '}
-                            <strong>Vannes</strong>, et se spécialise dans la
-                            photographie de mariage, le portrait, l’événementiel
-                            ainsi que la réalisation vidéo.
+                            <Link
+                                href="https://www.fredgaffori.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Frédéric Gaffori
+                            </Link>{' '}
+                            , photographe et réalisateur vidéo. Ce projet met
+                            l’accent sur l’esthétique, la lisibilité et la
+                            valorisation des contenus visuels, tout en offrant
+                            une navigation fluide et une gestion autonome des
+                            contenus. Frédéric exerce entre{' '}
+                            <strong>Nice</strong> et <strong>Vannes</strong>, et
+                            se spécialise dans la photographie de mariage, le
+                            portrait, l’événementiel ainsi que la réalisation
+                            vidéo.
                         </p>
                     </div>
                 </article>
             </div>
+            {/* <div className={styles.projectLink}>
+                <Link href="/portfolio" className="internal-link">
+                    Portfolio
+                </Link>
+            </div> */}
             {}
         </section>
     );
