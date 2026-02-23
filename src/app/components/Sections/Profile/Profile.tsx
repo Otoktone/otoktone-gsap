@@ -10,6 +10,7 @@ import styles from './Profile.module.scss';
 const Profile = () => {
     const textRef = useRef<HTMLDivElement | null>(null);
     const [isOpen, setIsOpen] = useState(false);
+    const sectionRef = useRef<HTMLElement | null>(null);
 
     const birthDate: Date = new Date('1988-11-25');
     const ageDiffMs: number = Date.now() - birthDate.getTime();
@@ -49,7 +50,7 @@ const Profile = () => {
     }, [isOpen]);
 
     return (
-        <section id={styles.profile}>
+        <section ref={sectionRef} id={styles.profile}>
             <div className={styles.profileContainer}>
                 <div className={styles.contentProfile}>
                     <div className={styles.contentImageProfile}>
@@ -152,7 +153,16 @@ const Profile = () => {
                             aria-expanded={isOpen}
                             aria-controls="profile-more"
                             className={styles.readMore}
-                            onClick={() => setIsOpen((prev) => !prev)}
+                            onClick={() => {
+                                if (isOpen && sectionRef.current) {
+                                    sectionRef.current.scrollIntoView({
+                                        behavior: 'smooth',
+                                        block: 'start',
+                                    });
+                                }
+
+                                setIsOpen((prev) => !prev);
+                            }}
                         >
                             {isOpen ? 'Voir moins' : 'Lire plus'}
                         </button>
