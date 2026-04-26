@@ -11,6 +11,10 @@ const HeroProfile = dynamic(
     () => import('@/app/profil/components/Hero/HeroProfile')
 );
 
+const InfoProfile = dynamic(
+    () => import('@/app/profil/components/Informations/InfoProfile')
+);
+
 const Informations = dynamic(
     () => import('@/app/profil/components/Informations/Informations')
 );
@@ -19,6 +23,7 @@ const Profile = () => {
     return (
         <>
             <HeroProfile />
+            <InfoProfile />
             <Informations />
         </>
     );

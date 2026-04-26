@@ -1,72 +1,79 @@
-@use '../../../styles/variables.scss' as *;
+@use './../../../styles/variables.scss' as *;
 
-#informations {
-    display: grid;
+.informationsContainer {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: $black;
+    border-top: 1px solid $dark;
+}
+
+.sectionsWrapper {
     position: relative;
     width: 100%;
-    overflow: hidden;
-    border-top: 1px solid $dark;
-    .informationsContainer {
-        display: grid;
-        width: 100%;
-        position: relative;
-        max-width: 1400px;
-        padding: 40px 20px;
-        margin: auto;
-        gap: 40px;
-        z-index: 2;
-        background: rgba($color: $black, $alpha: 0.2);
-        .contentProfile {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
 
-            .contentImageProfile {
-                margin: auto;
-                background: $black;
-                display: flex;
+.infoSection {
+    position: absolute;
+    width: 100%;
+    max-width: 860px;
+    padding: 40px 20px;
+    will-change: opacity, transform;
+}
 
-                img {
-                    width: 100%;
-                    max-width: 400px;
-                    height: fit-content;
-                    border: 2px solid $dark;
-                    border-radius: 10px;
-                    opacity: 0.85;
-                }
-            }
+.infoSectionHeader {
+    margin-bottom: 32px;
 
-            .contentTextProfile {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
+    h2 {
+        font-family: $font-geist-mono;
+        font-size: clamp(2rem, 5vw, 4.5rem);
+        font-weight: 700;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin-bottom: 12px;
+    }
 
-                p {
-                    line-height: 30px;
-                }
-
-                h3 {
-                    font-family: $font-geist-mono;
-                    opacity: 0.5;
-                    text-transform: uppercase;
-                    text-align: right;
-                }
-            }
-        }
+    h3 {
+        font-size: clamp(0.85rem, 1.5vw, 1rem);
+        font-weight: 300;
+        color: rgba($white, 0.5);
+        max-width: 600px;
+        line-height: 1.7;
     }
 }
 
-@media (min-width: 992px) {
-    #informations {
-        .informationsContainer {
-            .contentProfile {
-                flex-direction: row;
-                .contentImageProfile {
-                    img {
-                        min-width: 350px;
-                    }
-                }
-            }
-        }
+.infoSectionItems {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.item {
+    padding: 16px 20px;
+    border: 1px solid rgba($white, 0.08);
+    border-left: 2px solid $electric;
+    background: rgba($white, 0.02);
+
+    h4 {
+        font-family: $font-geist-mono;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $electric;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-size: 0.85rem;
+        font-weight: 300;
+        color: rgba($white, 0.6);
+        line-height: 1.6;
     }
 }

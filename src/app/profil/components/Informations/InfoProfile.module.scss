@@ -1,0 +1,417 @@
+@use './../../../styles/variables.scss' as *;
+
+@keyframes blinkBorder {
+    0%,
+    100% {
+        border-color: $electric;
+        box-shadow: 0 0 8px rgba($electric, 0.3);
+    }
+    50% {
+        border-color: rgba($electric, 0.2);
+        box-shadow: none;
+    }
+}
+
+@keyframes blinkBg {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.08;
+    }
+}
+
+@keyframes scan {
+    0% {
+        top: -20%;
+    }
+    100% {
+        top: 120%;
+    }
+}
+
+@keyframes cursor {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 4px $electric;
+    }
+    50% {
+        opacity: 0.4;
+        box-shadow: none;
+    }
+}
+
+@keyframes glitch {
+    0%,
+    90%,
+    100% {
+        transform: none;
+        opacity: 0;
+    }
+    92% {
+        transform: translateX(-2px);
+        opacity: 1;
+    }
+    94% {
+        transform: translateX(2px);
+        opacity: 1;
+    }
+    96% {
+        transform: none;
+        opacity: 0;
+    }
+}
+
+#infoProfile {
+    display: grid;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid $dark;
+    background: $black;
+
+    .infoProfileContainer {
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+        padding: 60px 20px;
+    }
+
+    .idCard {
+        position: relative;
+        border: 1px solid rgba($electric, 0.2);
+        background: #080f14;
+        clip-path: polygon(
+            0 0,
+            calc(100% - 24px) 0,
+            100% 24px,
+            100% 100%,
+            24px 100%,
+            0 calc(100% - 24px)
+        );
+
+        // Scanlines overlay
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba($electric, 0.012) 2px,
+                rgba($electric, 0.012) 4px
+            );
+            pointer-events: none;
+            z-index: 0;
+        }
+    }
+
+    // Coins décoratifs
+    .cornerTl,
+    .cornerBr {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        z-index: 2;
+    }
+
+    .cornerTl {
+        top: 0;
+        left: 0;
+        border-top: 2px solid $electric;
+        border-left: 2px solid $electric;
+    }
+
+    .cornerBr {
+        bottom: 0;
+        right: 0;
+        border-bottom: 2px solid $electric;
+        border-right: 2px solid $electric;
+    }
+
+    // Header
+    .idHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+        border-bottom: 1px solid rgba($electric, 0.12);
+        position: relative;
+        z-index: 1;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .idHeaderLabel {
+        font-family: $font-geist-mono;
+        font-size: 10px;
+        letter-spacing: 3px;
+        color: rgba($electric, 0.45);
+        text-transform: uppercase;
+    }
+
+    .authorizedBadge {
+        font-family: $font-geist-mono;
+        font-size: 11px;
+        letter-spacing: 4px;
+        color: $electric;
+        border: 1px solid $electric;
+        padding: 4px 14px;
+        position: relative;
+        animation: blinkBorder 2s ease-in-out infinite;
+        text-transform: uppercase;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: $electric;
+            opacity: 0;
+            animation: blinkBg 2s ease-in-out infinite;
+        }
+
+        span {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    // Body
+    .idBody {
+        display: grid;
+        grid-template-columns: 1fr;
+        position: relative;
+        z-index: 1;
+    }
+
+    // Colonne photo
+    .idPhotoCol {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid rgba($electric, 0.12);
+    }
+
+    .photoFrame {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba($electric, 0.25);
+        clip-path: polygon(
+            0 0,
+            calc(100% - 12px) 0,
+            100% 12px,
+            100% 100%,
+            0 100%
+        );
+        width: 160px;
+        height: 180px;
+
+        // Scanline animée sur la photo
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(
+                transparent,
+                rgba($electric, 0.12),
+                transparent
+            );
+            animation: scan 3s linear infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+    }
+
+    .photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        opacity: 0.85;
+        filter: saturate(0.7) brightness(0.9);
+    }
+
+    .photoLabel {
+        font-family: $font-geist-mono;
+        font-size: 9px;
+        letter-spacing: 2px;
+        color: rgba($electric, 0.35);
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .idNumber {
+        font-family: $font-geist-mono;
+        font-size: 9px;
+        color: rgba($electric, 0.3);
+        letter-spacing: 1px;
+        text-align: center;
+        border-top: 1px solid rgba($electric, 0.08);
+        padding-top: 10px;
+        width: 100%;
+        margin: 0;
+    }
+
+    // Colonne données
+    .idDataCol {
+        padding: 8px 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dataRow {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        border-bottom: 1px solid rgba($electric, 0.06);
+        padding: 12px 0;
+        align-items: start;
+        gap: 12px;
+
+        &.dataRowLast {
+            border-bottom: none;
+        }
+    }
+
+    .dataKey {
+        font-family: $font-geist-mono;
+        font-size: 10px;
+        letter-spacing: 2px;
+        color: rgba($electric, 0.4);
+        text-transform: uppercase;
+        padding-top: 2px;
+    }
+
+    .dataVal {
+        font-family: $font-geist-mono;
+        font-size: 13px;
+        color: rgba($electric, 0.85);
+        position: relative;
+
+        // Effet glitch sur le premier champ
+        &::before {
+            content: attr(data-text);
+            position: absolute;
+            left: 2px;
+            color: rgba(#ff00aa, 0.3);
+            clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
+            animation: glitch 5s infinite;
+            pointer-events: none;
+        }
+
+        // Curseur clignotant
+        &.typing::after {
+            content: '█';
+            animation: cursor 1s step-end infinite;
+            font-size: 11px;
+            color: $electric;
+            margin-left: 3px;
+        }
+    }
+
+    .dataSmall {
+        font-size: 11px;
+        color: rgba($electric, 0.65);
+        line-height: 1.8;
+    }
+
+    .dataMuted {
+        color: rgba($electric, 0.4);
+        font-size: 11px;
+    }
+
+    .dataSep {
+        color: rgba($electric, 0.3);
+        margin: 0 1px;
+    }
+
+    // Point de statut animé
+    .statusDot {
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        background: $electric;
+        border-radius: 50%;
+        margin-right: 10px;
+        vertical-align: middle;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    // Footer
+    .idFooter {
+        border-top: 1px solid rgba($electric, 0.12);
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 6px;
+        font-family: $font-geist-mono;
+        font-size: 9px;
+        color: rgba($electric, 0.25);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 640px) {
+    #infoProfile {
+        .idBody {
+            grid-template-columns: 220px 1fr;
+        }
+
+        .idPhotoCol {
+            border-bottom: none;
+            border-right: 1px solid rgba($electric, 0.12);
+        }
+
+        .photoFrame {
+            width: 180px;
+            height: 200px;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    #infoProfile {
+        .infoProfileContainer {
+            padding: 80px 20px;
+        }
+
+        .idPhotoCol {
+            padding: 32px;
+        }
+
+        .idDataCol {
+            padding: 12px 32px;
+        }
+
+        .dataRow {
+            grid-template-columns: 160px 1fr;
+            padding: 14px 0;
+        }
+
+        .dataVal {
+            font-size: 14px;
+        }
+    }
+}
