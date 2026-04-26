@@ -13,10 +13,21 @@
         right: 0;
         bottom: 0;
         width: 100%;
-        height: 100%;
-        min-height: 910px;
+        height: auto;
+        min-height: 100%;
         z-index: 1;
-        opacity: 0.35;
+        opacity: 1;
+        & > div {
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 800px;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+            min-height: 800px;
+        }
     }
     .profileContainer {
         display: grid;
@@ -115,6 +126,9 @@
 
 @media (min-width: 992px) {
     #profile {
+        .lightPillarBackground {
+            opacity: 0.35;
+        }
         .profileContainer {
             .contentProfile {
                 flex-direction: row;

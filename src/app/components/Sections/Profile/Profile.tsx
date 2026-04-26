@@ -3,6 +3,9 @@
 import { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+gsap.registerPlugin(ScrollToPlugin);
+
 import Image from 'next/image';
 import Link from 'next/link';
 import LightPillar from './LightPillar';
@@ -17,6 +20,8 @@ const Profile = () => {
     const ageDiffMs: number = Date.now() - birthDate.getTime();
     const ageDate: Date = new Date(ageDiffMs);
     const age: number = Math.abs(ageDate.getUTCFullYear() - 1970);
+
+    const scrollPositionRef = useRef<number>(0);
 
     useEffect(() => {
         const el = textRef.current;
@@ -55,18 +60,18 @@ const Profile = () => {
             <div className={styles.lightPillarBackground}>
                 {/* LightPillar component — source: https://reactbits.dev/backgrounds/light-pillar */}
                 <LightPillar
-                    topColor="#6A0DAD"
+                    topColor="#00f0ff"
                     bottomColor="#FF6EC7"
                     intensity={1}
                     rotationSpeed={0.4}
                     glowAmount={0.002}
-                    pillarWidth={9}
+                    pillarWidth={4}
                     pillarHeight={0.4}
                     noiseIntensity={0}
                     pillarRotation={45}
                     interactive={false}
-                    mixBlendMode="color-dodge"
-                    quality="high"
+                    mixBlendMode="normal"
+                    quality="medium"
                 />
             </div>
             <div className={styles.profileContainer}>
@@ -172,13 +177,15 @@ const Profile = () => {
                             aria-controls="profile-more"
                             className={styles.readMore}
                             onClick={() => {
-                                if (isOpen && sectionRef.current) {
-                                    sectionRef.current.scrollIntoView({
-                                        behavior: 'smooth',
-                                        block: 'start',
+                                if (!isOpen) {
+                                    scrollPositionRef.current = window.scrollY;
+                                } else {
+                                    gsap.to(window, {
+                                        scrollTo: scrollPositionRef.current,
+                                        duration: 0.5,
+                                        ease: 'power3.inOut',
                                     });
                                 }
-
                                 setIsOpen((prev) => !prev);
                             }}
                         >
