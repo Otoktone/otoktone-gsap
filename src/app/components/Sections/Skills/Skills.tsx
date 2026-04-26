@@ -40,14 +40,22 @@ const Skills = () => {
 
     useEffect(() => {
         if (window.innerWidth >= 992) return;
+
         cardsRef.current.forEach((card) => {
             ScrollTrigger.create({
                 trigger: card,
-                start: 'top center',
-                end: 'bottom center',
-                toggleClass: styles.active,
+                start: 'top 45%',
+                end: 'bottom 40%',
+                onEnter: () => card.classList.add(styles.active),
+                onLeave: () => card.classList.remove(styles.active),
+                onEnterBack: () => card.classList.add(styles.active),
+                onLeaveBack: () => card.classList.remove(styles.active),
             });
         });
+
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
     }, []);
 
     return (

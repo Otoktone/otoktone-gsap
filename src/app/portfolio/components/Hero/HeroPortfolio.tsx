@@ -31,7 +31,7 @@ const HeroPortfolio = () => {
                     trigger: sectionRef.current,
                     start: 'top top',
                     end: 'bottom top',
-                    scrub: 1.5,
+                    scrub: 0.5,
                 },
             }).to(h1Ref.current, {
                 scale: 75,

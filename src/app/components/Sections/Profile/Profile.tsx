@@ -19,7 +19,7 @@ const Profile = () => {
 
     useEffect(() => {
         const el = textRef.current;
-        if (!el || window.innerWidth > 992) return;
+        if (!el) return;
 
         gsap.killTweensOf(el);
 
@@ -55,7 +55,7 @@ const Profile = () => {
                 <div className={styles.contentProfile}>
                     <div className={styles.contentImageProfile}>
                         <Image
-                            src={'/profile.jpg'}
+                            src={'/profile.webp'}
                             alt="Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes"
                             width={0}
                             height={0}
