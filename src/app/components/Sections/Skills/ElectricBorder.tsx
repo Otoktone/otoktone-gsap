@@ -1,3 +1,5 @@
+// ElectricBorder component — source: https://reactbits.dev/animations/electric-border
+
 import React, {
     useEffect,
     useRef,

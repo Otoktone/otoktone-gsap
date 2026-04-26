@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
+// LightPillar component — source: https://reactbits.dev/backgrounds/light-pillar
+
 import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import './LightPillar.css';

@@ -83,7 +83,7 @@ const Skills = () => {
                     const isActive = isScrollActive || isHoverActive;
 
                     return (
-                        // // ElectricBorder component — source: https://reactbits.dev/animations/electric-border
+                        // ElectricBorder component — source: https://reactbits.dev/animations/electric-border
                         <ElectricBorder
                             key={index}
                             color={isActive ? '#00f0ff' : 'transparent'}
