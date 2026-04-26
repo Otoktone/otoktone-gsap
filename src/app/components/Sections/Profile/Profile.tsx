@@ -5,6 +5,7 @@ import gsap from 'gsap';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import LightPillar from './LightPillar';
 import styles from './Profile.module.scss';
 
 const Profile = () => {
@@ -51,6 +52,23 @@ const Profile = () => {
 
     return (
         <section ref={sectionRef} id={styles.profile}>
+            <div className={styles.lightPillarBackground}>
+                {/* LightPillar component — source: https://reactbits.dev/backgrounds/light-pillar */}
+                <LightPillar
+                    topColor="#6A0DAD"
+                    bottomColor="#FF6EC7"
+                    intensity={1}
+                    rotationSpeed={0.4}
+                    glowAmount={0.002}
+                    pillarWidth={9}
+                    pillarHeight={0.4}
+                    noiseIntensity={0}
+                    pillarRotation={45}
+                    interactive={false}
+                    mixBlendMode="color-dodge"
+                    quality="high"
+                />
+            </div>
             <div className={styles.profileContainer}>
                 <div className={styles.contentProfile}>
                     <div className={styles.contentImageProfile}>

@@ -20,6 +20,7 @@ const Hero = () => {
     return (
         <section id={styles.hero}>
             <div className={styles.heroHeaderContainer}>
+                {/* // Hyperspeed component — source: https://reactbits.dev/backgrounds/hyperspeed */}
                 <Hyperspeed
                     effectOptions={{
                         distortion: 'turbulentDistortion',
