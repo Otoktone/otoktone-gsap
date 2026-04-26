@@ -1,51 +1,21 @@
-"use client";
-
-import dynamic from "next/dynamic";
-
-const Hero = dynamic(() => import("@/app/components/Sections/Hero/Hero"), {
-  ssr: false,
-});
-const Presentation = dynamic(
-  () => import("@/app/components/Sections/Presentation/Presentation"),
-  {
-    ssr: false,
-  }
-);
-const Skills = dynamic(
-  () => import("@/app/components/Sections/Skills/Skills"),
-  {
-    ssr: false,
-  }
-);
-const Tech = dynamic(() => import("@/app/components/Sections/Tech/Tech"), {
-  ssr: false,
-});
-
-const Profile = dynamic(
-  () => import("@/app/components/Sections/Profile/Profile"),
-  {
-    ssr: false,
-  }
-);
-
-const Project = dynamic(
-  () => import("@/app/components/Sections/Project/Project"),
-  {
-    ssr: false,
-  }
-);
+import Hero from '@/app/components/Sections/Hero/Hero';
+import Presentation from '@/app/components/Sections/Presentation/Presentation';
+import Skills from '@/app/components/Sections/Skills/Skills';
+import Tech from '@/app/components/Sections/Tech/Tech';
+import Profile from '@/app/components/Sections/Profile/Profile';
+import Project from '@/app/components/Sections/Project/Project';
 
 const Home = () => {
-  return (
-    <>
-      <Hero />
-      <Presentation />
-      <Skills />
-      <Tech />
-      <Profile />
-      <Project />
-    </>
-  );
+    return (
+        <>
+            <Hero />
+            <Presentation />
+            <Skills />
+            <Tech />
+            <Profile />
+            <Project />
+        </>
+    );
 };
 
 export default Home;
