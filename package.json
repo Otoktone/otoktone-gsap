@@ -13,9 +13,11 @@
     "gsap": "^3.12.7",
     "next": "^15.1.7",
     "next-sitemap": "^4.2.3",
+    "postprocessing": "^6.39.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "split-type": "^0.3.4"
+    "split-type": "^0.3.4",
+    "three": "^0.184.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

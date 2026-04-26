@@ -24,7 +24,8 @@
 
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    box-shadow: rgba($white, 0.1) -30px -30px 60px -12px inset,
+    box-shadow:
+        rgba($white, 0.1) -30px -30px 60px -12px inset,
         rgba($electric, 0.15) -60px -30px 60px -18px inset;
 }
 

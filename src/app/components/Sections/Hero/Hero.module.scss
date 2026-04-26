@@ -1,55 +1,40 @@
-@use "./../../../styles/variables.scss" as *;
+@use './../../../styles/variables.scss' as *;
 
 #hero {
     display: grid;
     position: relative;
     width: 100%;
     overflow: hidden;
-
     .heroHeaderContainer {
         display: grid;
         width: 100%;
         height: 100dvh;
         min-height: 100vh;
         position: relative;
-
-        .heroHeaderBackground {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 125vh;
-            opacity: 0;
-            background-image: url('/abstract_background_white.svg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position-x: center;
-            animation: spin 60s infinite linear;
-        }
-
         @keyframes spin {
             0% {
                 transform: rotate3d(0, 0, 0, 0deg) scale(1) translate(0, 0);
             }
 
             25% {
-                transform: rotate3d(1, 0, 0, 0.1turn) scale(1.15) translate(-5%, -5%);
+                transform: rotate3d(1, 0, 0, 0.1turn) scale(1.15)
+                    translate(-5%, -5%);
             }
 
             50% {
-                transform: rotate3d(1, 0, 1, 0.1turn) scale(1.25) translate(-10%, -10%);
+                transform: rotate3d(1, 0, 1, 0.1turn) scale(1.25)
+                    translate(-10%, -10%);
             }
 
             75% {
-                transform: rotate3d(1, 0, 0, 0.1turn) scale(1.15) translate(-5%, -5%);
+                transform: rotate3d(1, 0, 0, 0.1turn) scale(1.15)
+                    translate(-5%, -5%);
             }
 
             100% {
                 transform: rotate3d(0, 0, 0, 0deg) scale(1) translate(0, 0);
             }
         }
-
         .heroHeaderTitle {
             max-width: 1660px;
             margin: auto;
@@ -57,7 +42,6 @@
             height: 100%;
             width: 100%;
             padding-inline: 40px;
-
             h1 {
                 display: flex;
                 align-items: start;
@@ -69,7 +53,6 @@
                 order: 2;
                 will-change: opacity;
             }
-
             h2 {
                 display: flex;
                 align-items: end;
@@ -91,11 +74,9 @@
         .heroHeaderContainer {
             .heroHeaderTitle {
                 padding-inline: 80px;
-
                 h1 {
                     font-size: 2.5vw;
                 }
-
                 h1,
                 h2 {
                     justify-content: center;
@@ -108,14 +89,8 @@
 @media (min-width: 1200px) {
     #hero {
         padding-inline: 20px;
-
         .heroHeaderContainer {
-            .heroHeaderBackground {
-                width: 125vw;
-            }
-
             .heroHeaderTitle {
-
                 h1 {
                     font-size: 2vw;
                 }
