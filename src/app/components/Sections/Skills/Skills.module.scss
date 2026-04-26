@@ -130,23 +130,23 @@
     #skills {
         .skillsContainer {
             grid-template-columns: repeat(4, 1fr);
+            .skillWrapper1 {
+                grid-area: 1 / 3 / 2 / 4;
+            }
+            .skillWrapper2 {
+                grid-area: 1 / 4 / 2 / 5;
+            }
+            .skillWrapper3 {
+                grid-area: 2 / 1 / 3 / 2;
+            }
+            .skillWrapper4 {
+                grid-area: 2 / 2 / 3 / 3;
+            }
+            .skillWrapper5 {
+                grid-area: 2 / 3 / 3 / 4;
+            }
             .skillCard {
                 height: 25vw;
-                &:nth-child(n + 1) {
-                    grid-area: 1 / 3 / 2 / 4;
-                }
-                &:nth-child(n + 2) {
-                    grid-area: 1 / 4 / 2 / 5;
-                }
-                &:nth-child(n + 3) {
-                    grid-area: 2 / 1 / 3 / 2;
-                }
-                &:nth-child(n + 4) {
-                    grid-area: 2 / 2 / 3 / 3;
-                }
-                &:nth-child(n + 5) {
-                    grid-area: 2 / 3 / 3 / 4;
-                }
                 p {
                     font-size: 1.5vw;
                 }

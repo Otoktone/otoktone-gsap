@@ -1,14 +1,17 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ElectricBorder from './ElectricBorder';
 gsap.registerPlugin(ScrollTrigger);
 
 import styles from './Skills.module.scss';
 
 const Skills = () => {
     const cardsRef = useRef<HTMLDivElement[]>([]);
+    const [activeCards, setActiveCards] = useState<Set<number>>(new Set());
+    const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
     const skills = [
         {
@@ -41,15 +44,28 @@ const Skills = () => {
     useEffect(() => {
         if (window.innerWidth >= 992) return;
 
-        cardsRef.current.forEach((card) => {
+        cardsRef.current.forEach((card, index) => {
             ScrollTrigger.create({
                 trigger: card,
                 start: 'top 45%',
                 end: 'bottom 40%',
-                onEnter: () => card.classList.add(styles.active),
-                onLeave: () => card.classList.remove(styles.active),
-                onEnterBack: () => card.classList.add(styles.active),
-                onLeaveBack: () => card.classList.remove(styles.active),
+                onEnter: () => {
+                    setActiveCards((prev) => new Set(prev).add(index));
+                },
+                onLeave: () =>
+                    setActiveCards((prev) => {
+                        const next = new Set(prev);
+                        next.delete(index);
+                        return next;
+                    }),
+                onEnterBack: () =>
+                    setActiveCards((prev) => new Set(prev).add(index)),
+                onLeaveBack: () =>
+                    setActiveCards((prev) => {
+                        const next = new Set(prev);
+                        next.delete(index);
+                        return next;
+                    }),
             });
         });
 
@@ -61,18 +77,34 @@ const Skills = () => {
     return (
         <section id={styles.skills}>
             <div className={styles.skillsContainer}>
-                {skills.map((skill, index) => (
-                    <div
-                        key={index}
-                        className={styles.skillCard}
-                        ref={(el) => {
-                            if (el) cardsRef.current[index] = el;
-                        }}
-                    >
-                        <h3>{skill.name}</h3>
-                        <p>{skill.description}</p>
-                    </div>
-                ))}
+                {skills.map((skill, index) => {
+                    const isScrollActive = activeCards.has(index);
+                    const isHoverActive = hoveredCard === index;
+                    const isActive = isScrollActive || isHoverActive;
+
+                    return (
+                        <ElectricBorder
+                            key={index}
+                            color={isActive ? '#00f0ff' : 'transparent'}
+                            speed={0.3}
+                            chaos={0.05}
+                            borderRadius={0}
+                            className={styles[`skillWrapper${index + 1}`]}
+                        >
+                            <div
+                                className={`${styles.skillCard} ${isActive ? styles.active : ''}`}
+                                ref={(el) => {
+                                    if (el) cardsRef.current[index] = el;
+                                }}
+                                onMouseEnter={() => setHoveredCard(index)}
+                                onMouseLeave={() => setHoveredCard(null)}
+                            >
+                                <h3>{skill.name}</h3>
+                                <p>{skill.description}</p>
+                            </div>
+                        </ElectricBorder>
+                    );
+                })}
             </div>
         </section>
     );
