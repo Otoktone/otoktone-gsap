@@ -26,7 +26,7 @@ export const infoSections = [
         id: 'development-front',
         title: 'Développement',
         subtitle:
-            "Front-end, frameworks et CMS — création d'interfaces et d'applications web modernes.",
+            "Front-end, frameworks et CMS — création d'interfaces et d'applications web.",
         items: [
             {
                 title: 'Front-end',
@@ -47,7 +47,7 @@ export const infoSections = [
         id: 'development-infra',
         title: 'Infrastructure',
         subtitle:
-            "Serveurs, réseau et outillage — administration et déploiement d'environnements techniques.",
+            "Serveurs, réseau — administration et déploiement d'environnements techniques.",
         items: [
             {
                 title: 'Server',

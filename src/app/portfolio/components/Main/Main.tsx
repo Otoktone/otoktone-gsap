@@ -66,6 +66,17 @@ const Main = () => {
         });
 
         return () => {
+            ScrollTrigger.getAll()
+                .filter((st) => {
+                    const trigger = st.vars.trigger;
+                    return (
+                        trigger instanceof Element &&
+                        document
+                            .querySelector(`#${styles.mainPortfolio}`)
+                            ?.contains(trigger)
+                    );
+                })
+                .forEach((st) => st.kill());
             ctx.revert();
         };
     }, []);

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { infoSections } from './sections';
@@ -12,7 +12,7 @@ const Informations = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const sectionsRef = useRef<HTMLDivElement[]>([]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             const total = sectionsRef.current.length;
 
@@ -60,10 +60,13 @@ const Informations = () => {
         }, containerRef);
 
         return () => {
-            ScrollTrigger.getAll()
-                .filter((st) => st.vars.trigger === containerRef.current)
-                .forEach((st) => st.kill());
             ctx.revert();
+
+            ScrollTrigger.getAll().forEach((st) => {
+                if (st.vars.trigger === containerRef.current) {
+                    st.kill(true);
+                }
+            });
         };
     }, []);
 

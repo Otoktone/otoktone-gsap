@@ -7,73 +7,76 @@
     overflow: hidden;
     background: $black;
     border-top: 1px solid $dark;
-}
-
-.sectionsWrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-}
-
-.infoSection {
-    position: absolute;
-    width: 100%;
-    max-width: 860px;
-    padding: 40px 20px;
-    will-change: opacity, transform;
-}
-
-.infoSectionHeader {
-    margin-bottom: 32px;
-
-    h2 {
-        font-family: $font-geist-mono;
-        font-size: clamp(2rem, 5vw, 4.5rem);
-        font-weight: 700;
-        color: $white;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        margin-bottom: 12px;
+    .sectionsWrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        .infoSection {
+            position: absolute;
+            width: 100%;
+            max-width: 992px;
+            padding: 40px 20px;
+            will-change: opacity, transform;
+            .infoSectionHeader {
+                margin-bottom: 32px;
+                h2 {
+                    font-family: $font-geist-mono;
+                    font-size: clamp(24px, 5vw, 4.5rem);
+                    font-weight: 700;
+                    color: rgba($white, 0.9);
+                    text-transform: uppercase;
+                    letter-spacing: 4px;
+                    margin-bottom: 12px;
+                }
+                h3 {
+                    font-size: clamp(14px, 0.8vw, 1rem);
+                    color: rgba($color: $white, $alpha: 0.8);
+                    font-weight: 200;
+                    line-height: 25px;
+                    text-wrap: pretty;
+                }
+            }
+            .infoSectionItems {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                .item {
+                    padding: 15px 20px;
+                    border: 1px solid rgba($white, 0.08);
+                    border-left: 2px solid rgba($electric, 0.8);
+                    background: rgba($white, 0.02);
+                    h4 {
+                        font-family: $font-geist-mono;
+                        font-size: clamp(16px, 1vw, 1.5rem);
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        color: rgba($electric, 0.9);
+                        margin-bottom: 8px;
+                    }
+                    p {
+                        font-size: clamp(14px, 0.8vw, 1rem);
+                    }
+                }
+            }
+        }
     }
-
-    h3 {
-        font-size: clamp(0.85rem, 1.5vw, 1rem);
-        font-weight: 300;
-        color: rgba($white, 0.5);
-        max-width: 600px;
-        line-height: 1.7;
-    }
 }
 
-.infoSectionItems {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-}
-
-.item {
-    padding: 16px 20px;
-    border: 1px solid rgba($white, 0.08);
-    border-left: 2px solid $electric;
-    background: rgba($white, 0.02);
-
-    h4 {
-        font-family: $font-geist-mono;
-        font-size: 0.8rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: $electric;
-        margin-bottom: 8px;
-    }
-
-    p {
-        font-size: 0.85rem;
-        font-weight: 300;
-        color: rgba($white, 0.6);
-        line-height: 1.6;
+@media (min-width: 992px) {
+    .informationsContainer {
+        .sectionsWrapper {
+            .infoSection {
+                max-width: 80vw;
+                .infoSectionItems {
+                    .item {
+                        padding: 20px 40px;
+                    }
+                }
+            }
+        }
     }
 }

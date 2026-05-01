@@ -8,12 +8,16 @@ gsap.registerPlugin(ScrollToPlugin);
 
 import Image from 'next/image';
 import Link from 'next/link';
-import LightPillar from './LightPillar';
+import dynamic from 'next/dynamic';
+
 import styles from './Profile.module.scss';
+
+const LightPillar = dynamic(() => import('./LightPillar'), {
+    ssr: false,
+});
 
 const Profile = () => {
     const textRef = useRef<HTMLDivElement | null>(null);
-    const [isOpen, setIsOpen] = useState(false);
     const sectionRef = useRef<HTMLElement | null>(null);
 
     const birthDate: Date = new Date('1988-11-25');
@@ -23,11 +27,52 @@ const Profile = () => {
 
     const scrollPositionRef = useRef<number>(0);
 
+    const [isOpen, setIsOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState<boolean | null>(null);
+
     useEffect(() => {
         const el = textRef.current;
         if (!el) return;
 
         gsap.killTweensOf(el);
+
+        const prefersReducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+        if (prefersReducedMotion || window.navigator.webdriver) {
+            return;
+        }
+
+        const isTestEnvironment = () => {
+            if (window.navigator.webdriver === true) return true;
+
+            const canvas = document.createElement('canvas');
+            const gl =
+                canvas.getContext('webgl') ||
+                canvas.getContext('experimental-webgl');
+            if (!gl) return true;
+
+            if (
+                /headless|phantom|crawler|bot/i.test(window.navigator.userAgent)
+            )
+                return true;
+
+            return false;
+        };
+
+        if (isTestEnvironment()) {
+            return;
+        }
+
+        const nav = navigator as Navigator & { deviceMemory?: number };
+        const isLowEnd =
+            navigator.hardwareConcurrency <= 4 ||
+            (nav.deviceMemory !== undefined && nav.deviceMemory <= 4);
+
+        if (isLowEnd) {
+            return;
+        }
 
         if (isOpen) {
             const fullHeight = el.scrollHeight;
@@ -55,30 +100,36 @@ const Profile = () => {
         }
     }, [isOpen]);
 
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 992);
+    }, []);
+
     return (
         <section ref={sectionRef} id={styles.profile}>
             <div className={styles.lightPillarBackground}>
                 {/* LightPillar component — source: https://reactbits.dev/backgrounds/light-pillar */}
-                <LightPillar
-                    topColor="#00f0ff"
-                    bottomColor="#FF6EC7"
-                    intensity={1}
-                    rotationSpeed={0.4}
-                    glowAmount={0.002}
-                    pillarWidth={4}
-                    pillarHeight={0.4}
-                    noiseIntensity={0}
-                    pillarRotation={45}
-                    interactive={false}
-                    mixBlendMode="normal"
-                    quality="medium"
-                />
+                {isMobile === false && (
+                    <LightPillar
+                        topColor="#00f0ff"
+                        bottomColor="#FF6EC7"
+                        intensity={1}
+                        rotationSpeed={0.4}
+                        glowAmount={0.002}
+                        pillarWidth={4}
+                        pillarHeight={0.4}
+                        noiseIntensity={0}
+                        pillarRotation={45}
+                        interactive={false}
+                        mixBlendMode="normal"
+                        quality="low"
+                    />
+                )}
             </div>
             <div className={styles.profileContainer}>
                 <div className={styles.contentProfile}>
                     <div className={styles.contentImageProfile}>
                         <Image
-                            src={'/profile.webp'}
+                            src={'/otoktone_alexandre_profile.webp'}
                             alt="Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes"
                             width={0}
                             height={0}

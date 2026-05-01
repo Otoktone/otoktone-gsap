@@ -35,7 +35,7 @@ const InfoProfile = () => {
                         <div className={styles.idPhotoCol}>
                             <div className={styles.photoFrame}>
                                 <Image
-                                    src="/profile.webp"
+                                    src="/otoktone_alexandre_profile.webp"
                                     alt="Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes"
                                     width={160}
                                     height={180}
