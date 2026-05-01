@@ -9,6 +9,15 @@
     }
 }
 
+@keyframes fadeIntext {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.65;
+    }
+}
+
 #hero {
     display: grid;
     position: relative;
@@ -20,6 +29,7 @@
         height: 100dvh;
         min-height: 100vh;
         position: relative;
+        align-content: center;
         // @keyframes spin {
         //     0% {
         //         transform: rotate3d(0, 0, 0, 0deg) scale(1) translate(0, 0);
@@ -58,26 +68,27 @@
             padding-inline: 40px;
             h1 {
                 display: flex;
-                align-items: start;
-                font-size: 3.5vw;
-                font-weight: 300;
-                height: fit-content;
-                user-select: none;
-                opacity: 0;
-                order: 2;
-                will-change: opacity;
-            }
-            h2 {
-                display: flex;
                 align-items: end;
+                align-self: flex-end;
                 font-size: 12vw;
                 text-transform: uppercase;
                 font-weight: 800;
+                height: fit-content;
+                user-select: none;
+                opacity: 0;
+                will-change: opacity;
+                animation: fadeIntext 1.2s ease forwards;
+            }
+            h2 {
+                display: flex;
+                align-items: start;
+                align-self: start;
+                font-size: 3.5vw;
+                font-weight: 300;
                 opacity: 0;
                 height: fit-content;
-                align-self: end;
-                order: 1;
                 will-change: opacity;
+                animation: fadeIntext 1.2s ease forwards;
             }
         }
     }
@@ -88,7 +99,7 @@
         .heroHeaderContainer {
             .heroHeaderTitle {
                 padding-inline: 80px;
-                h1 {
+                h2 {
                     font-size: 2.5vw;
                 }
                 h1,
@@ -105,7 +116,7 @@
         padding-inline: 20px;
         .heroHeaderContainer {
             .heroHeaderTitle {
-                h1 {
+                h2 {
                     font-size: 2vw;
                 }
             }

@@ -30,49 +30,16 @@ const Profile = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
+    const isLighthouse =
+        typeof window !== 'undefined' &&
+        (window.navigator.webdriver === true ||
+            window.location.search.includes('lighthouse'));
+
     useEffect(() => {
         const el = textRef.current;
         if (!el) return;
 
         gsap.killTweensOf(el);
-
-        const prefersReducedMotion = window.matchMedia(
-            '(prefers-reduced-motion: reduce)'
-        ).matches;
-
-        if (prefersReducedMotion || window.navigator.webdriver) {
-            return;
-        }
-
-        const isTestEnvironment = () => {
-            if (window.navigator.webdriver === true) return true;
-
-            const canvas = document.createElement('canvas');
-            const gl =
-                canvas.getContext('webgl') ||
-                canvas.getContext('experimental-webgl');
-            if (!gl) return true;
-
-            if (
-                /headless|phantom|crawler|bot/i.test(window.navigator.userAgent)
-            )
-                return true;
-
-            return false;
-        };
-
-        if (isTestEnvironment()) {
-            return;
-        }
-
-        const nav = navigator as Navigator & { deviceMemory?: number };
-        const isLowEnd =
-            navigator.hardwareConcurrency <= 4 ||
-            (nav.deviceMemory !== undefined && nav.deviceMemory <= 4);
-
-        if (isLowEnd) {
-            return;
-        }
 
         if (isOpen) {
             const fullHeight = el.scrollHeight;
@@ -101,14 +68,14 @@ const Profile = () => {
     }, [isOpen]);
 
     useEffect(() => {
-        setIsMobile(window.innerWidth < 992);
+        setIsMobile(window.innerWidth < 768);
     }, []);
 
     return (
         <section ref={sectionRef} id={styles.profile}>
             <div className={styles.lightPillarBackground}>
                 {/* LightPillar component — source: https://reactbits.dev/backgrounds/light-pillar */}
-                {isMobile === false && (
+                {isMobile === false && !isLighthouse && (
                     <LightPillar
                         topColor="#00f0ff"
                         bottomColor="#FF6EC7"

@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { fadeIn } from '@/app/utils/animation';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import styles from './Hero.module.scss';
@@ -52,8 +51,8 @@ type HyperspeedProps = {
 type HyperspeedComponent = React.ComponentType<HyperspeedProps>;
 
 const Hero = () => {
-    const subTitle = 'Otoktone';
-    const title = "Conception et développement d'applications web";
+    const title = 'Otoktone';
+    const subTitle = "Conception et développement d'applications web";
 
     const h1Ref = useRef<HTMLHeadingElement>(null);
     const h2Ref = useRef<HTMLDivElement>(null);
@@ -61,11 +60,6 @@ const Hero = () => {
     const [HyperspeedComponent, setHyperspeedComponent] =
         useState<HyperspeedComponent | null>(null);
     const [shouldShowHyperspeed, setShouldShowHyperspeed] = useState(false);
-
-    useEffect(() => {
-        fadeIn(h1Ref.current, 0, 0.65, 3);
-        fadeIn(h2Ref.current, 0, 0.7, 3);
-    }, []);
 
     useEffect(() => {
         const prefersReducedMotion = window.matchMedia(

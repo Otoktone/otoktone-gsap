@@ -5,6 +5,9 @@ export const metadata: Metadata = {
     title: 'Alexandre Desmot | Otoktone | Contact',
     description:
         'Contactez Alexandre Desmot, développeur web en Bretagne à Vannes et fondateur du site Otoktone',
+    alternates: {
+        canonical: '/contact',
+    },
 };
 
 const HeroContact = dynamic(
