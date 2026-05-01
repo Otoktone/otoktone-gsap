@@ -1,52 +1,11 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
-import { fadeInStaggered } from '@/app/utils/animation';
 import { splitText } from '@/app/utils/textUtils';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Project.module.scss';
 
 const Project = () => {
-    const h5refs = useRef<(HTMLHeadingElement | null)[]>([]);
-    const animated = useRef<Set<HTMLHeadingElement>>(new Set());
-
-    const setH5Ref = useCallback((el: HTMLHeadingElement | null) => {
-        if (el && !h5refs.current.includes(el)) {
-            h5refs.current.push(el);
-        }
-    }, []);
-
-    useEffect(() => {
-        const observers: IntersectionObserver[] = [];
-
-        h5refs.current.forEach((h5) => {
-            if (!h5) return;
-
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting && !animated.current.has(h5)) {
-                        const letters = h5.querySelectorAll('span');
-                        fadeInStaggered(letters, 0, 0.75, 0.5, 0.05);
-                        animated.current.add(h5);
-                        observer.unobserve(h5);
-                    }
-                },
-                {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -200px 0px',
-                }
-            );
-
-            observer.observe(h5);
-            observers.push(observer);
-        });
-
-        return () => {
-            observers.forEach((observer) => observer.disconnect());
-        };
-    }, []);
-
     return (
         <section id={styles.project}>
             {}
@@ -55,7 +14,7 @@ const Project = () => {
                 <article className="projectArticle">
                     <div className={styles.projectTitle}>
                         <h4>Otoktone</h4>
-                        <h5 ref={setH5Ref}>{splitText('Portfolio')}</h5>
+                        <h5>{splitText('Portfolio')}</h5>
                         <div className={styles.projectTitleStack}>
                             <span>Next.js</span>
                         </div>
@@ -103,9 +62,7 @@ const Project = () => {
                 <article className="projectArticle">
                     <div className={styles.projectTitle}>
                         <h4>Vortex</h4>
-                        <h5 ref={setH5Ref}>
-                            {splitText('Aggrégateur de flux')}
-                        </h5>
+                        <h5>{splitText('Aggrégateur de flux')}</h5>
                         <div className={styles.projectTitleStack}>
                             <span>Symfony</span>
                         </div>
@@ -154,9 +111,7 @@ const Project = () => {
                 <article className="projectArticle">
                     <div className={styles.projectTitle}>
                         <h4>FRED GAFFORI</h4>
-                        <h5 ref={setH5Ref}>
-                            {splitText('Photographe et réalisateur vidéo')}
-                        </h5>
+                        <h5>{splitText('Photographe et réalisateur vidéo')}</h5>
                         <div className={styles.projectTitleStack}>
                             <span>WordPress</span>
                         </div>
