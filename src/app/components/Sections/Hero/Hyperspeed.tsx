@@ -1437,6 +1437,8 @@ const Hyperspeed: FC<HyperspeedProps> = ({
         const container = hyperspeed.current;
         if (!container) return;
 
+        let isMounted = true;
+
         const options: HyperspeedOptions = {
             ...defaultOptions,
             ...effectOptions,
@@ -1448,11 +1450,18 @@ const Hyperspeed: FC<HyperspeedProps> = ({
 
         const myApp = new App(container, options);
         appRef.current = myApp;
-        myApp.loadAssets().then(myApp.init);
+
+        myApp.loadAssets().then(() => {
+            if (isMounted) {
+                myApp.init();
+            }
+        });
 
         return () => {
+            isMounted = false;
             if (appRef.current) {
                 appRef.current.dispose();
+                appRef.current = null;
             }
         };
     }, [effectOptions]);

@@ -1,5 +1,14 @@
 @use './../../../styles/variables.scss' as *;
 
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.2;
+    }
+}
+
 #hero {
     display: grid;
     position: relative;
@@ -11,29 +20,34 @@
         height: 100dvh;
         min-height: 100vh;
         position: relative;
-        @keyframes spin {
-            0% {
-                transform: rotate3d(0, 0, 0, 0deg) scale(1) translate(0, 0);
-            }
+        // @keyframes spin {
+        //     0% {
+        //         transform: rotate3d(0, 0, 0, 0deg) scale(1) translate(0, 0);
+        //     }
 
-            25% {
-                transform: rotate3d(1, 0, 0, 0.1turn) scale(1.15)
-                    translate(-5%, -5%);
-            }
+        //     25% {
+        //         transform: rotate3d(1, 0, 0, 0.1turn) scale(1.15)
+        //             translate(-5%, -5%);
+        //     }
 
-            50% {
-                transform: rotate3d(1, 0, 1, 0.1turn) scale(1.25)
-                    translate(-10%, -10%);
-            }
+        //     50% {
+        //         transform: rotate3d(1, 0, 1, 0.1turn) scale(1.25)
+        //             translate(-10%, -10%);
+        //     }
 
-            75% {
-                transform: rotate3d(1, 0, 0, 0.1turn) scale(1.15)
-                    translate(-5%, -5%);
-            }
+        //     75% {
+        //         transform: rotate3d(1, 0, 0, 0.1turn) scale(1.15)
+        //             translate(-5%, -5%);
+        //     }
 
-            100% {
-                transform: rotate3d(0, 0, 0, 0deg) scale(1) translate(0, 0);
-            }
+        //     100% {
+        //         transform: rotate3d(0, 0, 0, 0deg) scale(1) translate(0, 0);
+        //     }
+        // }
+        .hearoHeaderImage {
+            opacity: 0;
+            animation: fadeInImage 1.2s ease forwards;
+            z-index: -1;
         }
         .heroHeaderTitle {
             max-width: 1660px;
