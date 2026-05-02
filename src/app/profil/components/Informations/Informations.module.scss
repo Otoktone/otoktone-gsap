@@ -15,6 +15,22 @@
         align-items: center;
         justify-content: center;
         padding: 40px 20px;
+        background-image: url('/cyber_background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                65deg,
+                rgba(0, 0, 0, 0) 0%,
+                rgba(0, 0, 0, 1) 100%
+            );
+        }
         .infoSection {
             position: absolute;
             width: 100%;
@@ -69,6 +85,13 @@
 @media (min-width: 992px) {
     .informationsContainer {
         .sectionsWrapper {
+            &::before {
+                background: linear-gradient(
+                    65deg,
+                    rgba(0, 0, 0, 0.6) 0%,
+                    rgba(0, 0, 0, 1) 100%
+                );
+            }
             .infoSection {
                 .infoSectionItems {
                     .item {
