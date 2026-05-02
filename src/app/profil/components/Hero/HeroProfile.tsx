@@ -14,14 +14,12 @@ const HeroProfile = () => {
 
     const backgroundRef = useRef<HTMLDivElement>(null);
     const h1Ref = useRef<HTMLHeadingElement>(null);
-    const h2Ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         fadeIn(backgroundRef.current, 0, 0.5, 3);
         fadeIn(h1Ref.current, 0, 0.65, 3);
-        fadeIn(h2Ref.current, 0, 0.7, 3);
 
-        if (!backgroundRef.current || !h1Ref.current || !h2Ref.current) return;
+        if (!backgroundRef.current || !h1Ref.current) return;
 
         gsap.to(backgroundRef.current, {
             yPercent: -20,
@@ -44,17 +42,6 @@ const HeroProfile = () => {
                 scrub: true,
             },
         });
-
-        gsap.to(h2Ref.current, {
-            yPercent: 15,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: backgroundRef.current,
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true,
-            },
-        });
     }, []);
 
     return (
@@ -64,8 +51,10 @@ const HeroProfile = () => {
                     ref={backgroundRef}
                     className={styles.heroBackground}
                 ></div>
-                <h1 ref={h1Ref}>{title}</h1>
-                <h2 ref={h2Ref}>{subTitle}</h2>
+                <h1 ref={h1Ref}>
+                    <span className={styles.mainTitle}>{title}</span>
+                    <span className={styles.subTitle}>{subTitle}</span>
+                </h1>
             </div>
         </section>
     );

@@ -5,7 +5,6 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-
     .heroProfileContainer {
         display: flex;
         flex-direction: column;
@@ -16,7 +15,6 @@
         position: relative;
         padding-inline: 40px;
         margin: auto;
-
         .heroBackground {
             position: absolute;
             top: 0;
@@ -28,21 +26,22 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
-
         h1 {
-            font-size: 12vw;
-            text-transform: uppercase;
-            font-weight: 800;
+            display: flex;
+            flex-direction: column;
+            user-select: none;
             opacity: 0;
-            height: fit-content;
-            opacity: 0;
-        }
-
-        h2 {
-            font-size: 3.5vw;
-            font-weight: 300;
-            height: fit-content;
-            opacity: 0;
+            will-change: opacity;
+            animation: fadeIntext 1.2s ease forwards;
+            .mainTitle {
+                font-size: 12vw;
+                text-transform: uppercase;
+                font-weight: 800;
+            }
+            .subTitle {
+                font-size: 3.5vw;
+                font-weight: 300;
+            }
         }
     }
 }
@@ -52,11 +51,9 @@
         .heroProfileContainer {
             h1 {
                 text-align: center;
-                font-size: 8vw;
-            }
-
-            h2 {
-                text-align: center;
+                .mainTitle {
+                    font-size: 8vw;
+                }
             }
         }
     }
@@ -66,7 +63,9 @@
     #heroProfile {
         .heroProfileContainer {
             h1 {
-                font-size: 6.5vw;
+                .mainTitle {
+                    font-size: 6.5vw;
+                }
             }
         }
     }

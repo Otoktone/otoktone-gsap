@@ -31,9 +31,9 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
-    title: 'Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes',
+    title: 'Otoktone | Alexandre Desmot | Développeur Web Vannes',
     description:
-        "Alexandre Desmot | Développeur Web à Vannes (Bretagne). Conception, développement et intégration d'applications web. Création de sites et hébergement en France.",
+        "Alexandre Desmot | Développeur Web à Vannes. Conception, développement et intégration d'applications web. Création de sites et hébergement en France.",
     metadataBase: new URL('https://otoktone.fr'),
     alternates: {
         canonical: '/',
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
         apple: '/apple-touch-icon.png',
     },
     openGraph: {
-        title: 'Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes',
+        title: 'Otoktone | Alexandre Desmot | Développeur Web Vannes',
         description:
-            "Alexandre Desmot | Développeur Web à Vannes (Bretagne). Conception, développement et intégration d'applications web. Création de sites et hébergement en France.",
+            "Alexandre Desmot | Développeur Web à Vannes. Conception, développement et intégration d'applications web. Création de sites et hébergement en France.",
         url: 'https://otoktone.fr',
         type: 'website',
         images: [
@@ -53,15 +53,15 @@ export const metadata: Metadata = {
                 url: '/preview.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'Aperçu du site Otoktone | Alexandre Desmot | Développeur Web Bretagne Vannes',
+                alt: 'Aperçu du site Otoktone | Alexandre Desmot | Développeur Web Vannes',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Alexandre Desmot | Otoktone | Développeur Web Bretagne Vannes',
+        title: 'Otoktone | Alexandre Desmot | Développeur Web Vannes',
         description:
-            "Alexandre Desmot | Développeur Web à Vannes (Bretagne). Conception, développement et intégration d'applications web. Création de sites et hébergement en France.",
+            "Alexandre Desmot | Développeur Web à Vannes. Conception, développement et intégration d'applications web. Création de sites et hébergement en France.",
         images: [
             {
                 url: '/preview.jpg',

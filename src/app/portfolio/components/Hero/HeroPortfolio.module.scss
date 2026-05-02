@@ -27,19 +27,21 @@
             background-repeat: no-repeat;
         }
         h1 {
-            font-size: 12vw;
-            text-transform: uppercase;
-            font-weight: 800;
+            display: flex;
+            flex-direction: column;
+            user-select: none;
+            will-change: opacity;
             opacity: 0;
-            height: fit-content;
-            opacity: 0;
-            transform-origin: 60px 30px;
-        }
-        h2 {
-            font-size: 6.5vw;
-            font-weight: 300;
-            height: fit-content;
-            opacity: 0;
+            .mainTitle {
+                font-size: 12vw;
+                text-transform: uppercase;
+                font-weight: 800;
+                transform-origin: 60px 30px;
+            }
+            .subTitle {
+                font-size: 6.5vw;
+                font-weight: 300;
+            }
         }
     }
 }
@@ -50,9 +52,8 @@
             h1 {
                 text-align: center;
                 transform-origin: center;
-            }
-            h2 {
-                text-align: center;
+                .subTitle {
+                }
             }
         }
     }
@@ -61,8 +62,10 @@
 @media (min-width: 1200px) {
     #heroPortfolio {
         .heroPortfolioContainer {
-            h2 {
-                font-size: 5vw;
+            h1 {
+                .subTitle {
+                    font-size: 5vw;
+                }
             }
         }
     }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import styles from './Hero.module.scss';
@@ -53,9 +53,6 @@ type HyperspeedComponent = React.ComponentType<HyperspeedProps>;
 const Hero = () => {
     const title = 'Otoktone';
     const subTitle = "Conception et développement d'applications web";
-
-    const h1Ref = useRef<HTMLHeadingElement>(null);
-    const h2Ref = useRef<HTMLDivElement>(null);
 
     const [HyperspeedComponent, setHyperspeedComponent] =
         useState<HyperspeedComponent | null>(null);
@@ -177,8 +174,10 @@ const Hero = () => {
                     />
                 )}
                 <div className={styles.heroHeaderTitle}>
-                    <h1 ref={h1Ref}>{title}</h1>
-                    <h2 ref={h2Ref}>{subTitle}</h2>
+                    <h1>
+                        <span className={styles.mainTitle}>{title}</span>
+                        <span className={styles.subTitle}>{subTitle}</span>
+                    </h1>
                 </div>
             </div>
         </section>
