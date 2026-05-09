@@ -74,7 +74,7 @@ const Profile = () => {
     return (
         <section ref={sectionRef} id={styles.profile}>
             <div className={styles.lightPillarBackground}>
-                {/* LightPillar component — source: https://reactbits.dev/backgrounds/light-pillar */}
+                {/* LightPillar component - source: https://reactbits.dev/backgrounds/light-pillar */}
                 {isMobile === false && !isLighthouse && (
                     <LightPillar
                         topColor="#00f0ff"
@@ -210,8 +210,8 @@ const Profile = () => {
                             {isOpen ? 'Voir moins' : 'Lire plus'}
                         </button>
                         <h3>
-                            Alexandre Desmot | Otoktone | Développeur Web
-                            Bretagne Vannes
+                            Alexandre Desmot | Otoktone | Conception et
+                            développement d'applications web
                         </h3>
                         {/* eslint-enable react/no-unescaped-entities */}
                     </div>

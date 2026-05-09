@@ -120,7 +120,7 @@ const Hero = () => {
     return (
         <section id={styles.hero}>
             <div className={styles.heroHeaderContainer}>
-                {/* // Hyperspeed component — source: https://reactbits.dev/backgrounds/hyperspeed */}
+                {/* // Hyperspeed component - source: https://reactbits.dev/backgrounds/hyperspeed */}
                 {shouldShowHyperspeed && HyperspeedComponent ? (
                     <Hyperspeed
                         effectOptions={{

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// Hyperspeed component — source: https://reactbits.dev/backgrounds/hyperspeed
+// Hyperspeed component - source: https://reactbits.dev/backgrounds/hyperspeed
 
 import {
     BloomEffect,

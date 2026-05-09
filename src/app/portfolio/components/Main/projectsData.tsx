@@ -55,7 +55,7 @@ export const projects: Project[] = [
                 </p>
             </>
         ),
-        image: '/project/otoktone.webp',
+        image: '/project/mockup_otoktone_opti.webp',
         alt: 'Otoktone - Alexandre Desmot - Site web portfolio',
         link: '/projects/otoktone',
         tech: ['Next.js', 'GSAP', 'Scaleway Dedibox'],
@@ -98,7 +98,7 @@ export const projects: Project[] = [
                 </p>
             </>
         ),
-        image: '/project/vortex.webp',
+        image: '/project/mockup_vortex_opti.webp',
         alt: 'Vortex - Agrégation de flux - Site web Symfony',
         link: '/projects/vortex',
         tech: ['Symfony', 'Doctrine', 'Webpack', 'Docker'],
@@ -130,18 +130,52 @@ export const projects: Project[] = [
                 <p>
                     Découvrir le site :{' '}
                     <Link
-                        href="https://www.fredgaffori.com"
+                        href="https://fredgaffori.com"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener"
                     >
                         fredgaffori.com
                     </Link>
                 </p>
             </>
         ),
-        image: '/project/fred.webp',
+        image: '/project/mockup_fred_opti.webp',
         alt: 'FRED GAFFORI - Photographe & Réalisateur Vidéo - Nice & Vannes',
         link: '/projects/fred-gaffori',
         tech: ['WordPress', 'Child theme'],
+    },
+
+    {
+        title: 'Institut Nolwen',
+        subtitle: 'Esthéticienne à domicile',
+        description: (
+            <>
+                <p>
+                    Site vitrine conçu avec{' '}
+                    <a href="https://wordpress.org/" target="_blank">
+                        Wordpress
+                    </a>{' '}
+                    et un thème entièrement personnalisé, présentant l’activité
+                    de Nolwen, esthéticienne à domicile.
+                </p>
+                <p>
+                    Ce projet inclut également la création complète de
+                    l’identité visuelle : <strong>logo</strong>,{' '}
+                    <strong>charte graphique</strong>, ainsi que des supports de
+                    communication tels que <strong>cartes de visite</strong> et{' '}
+                    <strong>brochure tarifaire</strong>.
+                </p>
+                <p>
+                    L’objectif était de proposer une image à la fois{' '}
+                    <strong>douce</strong>,<strong> professionnelle</strong> et{' '}
+                    <strong>cohérente</strong> sur l’ensemble des supports, tout
+                    en offrant une gestion simple et autonome du site.
+                </p>
+            </>
+        ),
+        image: '/project/mockup_nolwen_opti.webp',
+        alt: "Institut Nolwen - Esthéticienne à domicile - Pluvigner - Pays d'Auray - Vannes",
+        link: '/projects/nolwen-institut',
+        tech: ['WordPress', 'Custom theme'],
     },
 ];

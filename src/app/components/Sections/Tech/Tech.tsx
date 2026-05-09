@@ -135,7 +135,11 @@ const Tech = () => {
                             .concat(shuffleArray(technologies))
                             .map((tech, index) => (
                                 <div key={index} className={styles.techCard}>
-                                    <a href={tech.url} target="_blank">
+                                    <a
+                                        href={tech.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <Image
                                             src={tech.image}
                                             alt={tech.name}
@@ -143,7 +147,7 @@ const Tech = () => {
                                             height={0}
                                             loading="lazy"
                                         />
-                                        <h4>{tech.name}</h4>
+                                        <span>{tech.name}</span>
                                     </a>
                                 </div>
                             ))}

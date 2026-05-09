@@ -27,7 +27,7 @@
                     150deg,
                     rgba(0, 0, 0, 1) 0%,
                     rgba(26, 26, 26, 0.52) 55%,
-                    rgba($purple, 0.5) 100%
+                    rgba($electric, 0.5) 100%
                 );
             }
             &:nth-child(3n + 2) {
@@ -35,7 +35,7 @@
                     150deg,
                     rgba(0, 0, 0, 1) 0%,
                     rgba(26, 26, 26, 0.52) 55%,
-                    rgba($electric, 0.5) 100%
+                    rgba($purple, 0.5) 100%
                 );
             }
             &:nth-child(3n + 3) {
@@ -55,7 +55,7 @@
                     flex-direction: column;
                     h3 {
                         font-weight: 300;
-                        font-size: clamp(40px, 6vw, 80px);
+                        font-size: clamp(40px, 6vw, 70px);
                         text-transform: uppercase;
                     }
                     h4 {

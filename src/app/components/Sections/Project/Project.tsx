@@ -21,7 +21,7 @@ const Project = () => {
                     </div>
                     <div className={styles.projectImage}>
                         <Image
-                            src={'/project/otoktone.webp'}
+                            src={'/project/mockup_otoktone_opti.webp'}
                             alt={
                                 'Otoktone - Alexandre Desmot - Site web portfolio'
                             }
@@ -33,27 +33,34 @@ const Project = () => {
                     <div className={styles.projectContent}>
                         <p>
                             Alexandre Desmot,{' '}
-                            <strong>développeur web à Vannes</strong>,
-                            spécialisé en création de sites, intégration et
-                            hébergement. Refonte complète de mon site personnel
-                            en{' '}
-                            <a href="https://nextjs.org/" target="_blank">
+                            <strong>développeur web à Vannes</strong>, est le
+                            fondateur d’Otoktone, spécialisé en création de
+                            sites, conception et développement d’applications
+                            web.. Ce site personnel est développé avec{' '}
+                            <a
+                                href="https://nextjs.org/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Next.js
                             </a>
-                            , hébergé sur serveur{' '}
+                            , et hébergé sur une infrastructure{' '}
                             <a
                                 href="https://www.scaleway.com/fr/dedibox/"
                                 target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 Scaleway Dedibox
                             </a>
-                            . Portfolio optimisé pour les{' '}
-                            <strong>performances</strong> et le{' '}
-                            <strong>SEO</strong>, design épuré, animations
-                            utilisant{' '}
-                            <a href="https://gsap.com/" target="_blank">
+                            . Le portfolio est optimisé pour les performances et
+                            le SEO, avec un design épuré et des animations via{' '}
+                            <a
+                                href="https://gsap.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 GSAP
-                            </a>{' '}
+                            </a>
                             .
                         </p>
                     </div>
@@ -69,7 +76,7 @@ const Project = () => {
                     </div>
                     <div className={styles.projectImage}>
                         <Image
-                            src={'/project/vortex.webp'}
+                            src={'/project/mockup_vortex_opti.webp'}
                             alt={
                                 'Vortex - Aggrégation de flux - Site web Symfony'
                             }
@@ -81,22 +88,35 @@ const Project = () => {
                     <div className={styles.projectContent}>
                         <p>
                             Vortex est une application développée avec{' '}
-                            <a href="https://symfony.com/" target="_blank">
+                            <a
+                                href="https://symfony.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Symfony
                             </a>
                             ,{' '}
                             <a
                                 href="https://www.doctrine-project.org/"
                                 target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 Doctrine
                             </a>
                             ,{' '}
-                            <a href="https://webpack.js.org/" target="_blank">
+                            <a
+                                href="https://webpack.js.org/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Webpack
                             </a>{' '}
                             et{' '}
-                            <a href="https://www.docker.com/" target="_blank">
+                            <a
+                                href="https://www.docker.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Docker
                             </a>
                             . Permettant de récupérer des articles depuis des
@@ -118,7 +138,7 @@ const Project = () => {
                     </div>
                     <div className={styles.projectImage}>
                         <Image
-                            src={'/project/fred.webp'}
+                            src={'/project/mockup_fred_opti.webp'}
                             alt={
                                 'FRED GAFFORI - Photographe & Réalisateur Vidéo - Nice & Vannes'
                             }
@@ -130,15 +150,19 @@ const Project = () => {
                     <div className={styles.projectContent}>
                         <p>
                             Site vitrine conçu avec{' '}
-                            <a href="https://wordpress.com/" target="_blank">
+                            <a
+                                href="https://wordpress.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 WordPress
                             </a>{' '}
                             et un thème enfant entièrement personnalisé, mettant
                             en valeur l’univers visuel de{' '}
                             <Link
-                                href="https://www.fredgaffori.com"
+                                href="https://fredgaffori.com"
                                 target="_blank"
-                                rel="noopener noreferrer"
+                                rel="noopener"
                             >
                                 Frédéric Gaffori
                             </Link>{' '}

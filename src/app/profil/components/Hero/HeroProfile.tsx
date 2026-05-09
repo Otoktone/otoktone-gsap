@@ -21,19 +21,8 @@ const HeroProfile = () => {
 
         if (!backgroundRef.current || !h1Ref.current) return;
 
-        gsap.to(backgroundRef.current, {
-            yPercent: -20,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: backgroundRef.current,
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true,
-            },
-        });
-
         gsap.to(h1Ref.current, {
-            yPercent: 10,
+            yPercent: 200,
             ease: 'none',
             scrollTrigger: {
                 trigger: backgroundRef.current,
