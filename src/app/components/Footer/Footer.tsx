@@ -126,7 +126,12 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.socials}>
-                    <a className="blank" href={facebook} target="_blank">
+                    <a
+                        className="blank"
+                        href={facebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <Image
                             src="/icons/facebook.svg"
                             width={20}
@@ -136,7 +141,12 @@ const Footer = () => {
                         />
                         Facebook
                     </a>
-                    <a className="blank" href={instagram} target="_blank">
+                    <a
+                        className="blank"
+                        href={instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <Image
                             src="/icons/instagram.svg"
                             width={20}
@@ -146,7 +156,12 @@ const Footer = () => {
                         />
                         Instagram
                     </a>
-                    <a className="blank" href={twitter} target="_blank">
+                    <a
+                        className="blank"
+                        href={twitter}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <Image
                             src="/icons/twitter-x.svg"
                             width={20}

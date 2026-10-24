@@ -113,6 +113,7 @@ const Navbar = () => {
                             <a
                                 href="https://github.com/Otoktone/"
                                 target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 <Image
                                     src="/icons/github.svg"
@@ -125,6 +126,7 @@ const Navbar = () => {
                             <a
                                 href="https://fr.linkedin.com/in/alexandre-desmot-145a34182"
                                 target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 <Image
                                     src="/icons/linkedin.svg"
